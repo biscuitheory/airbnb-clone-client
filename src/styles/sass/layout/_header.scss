@@ -2,7 +2,7 @@
 
 .header {
   width: 100%;
-  background-color: #f7b8b8;
+  background-color: #ffffff;
   // display: inline-flex;
   display: flex;
   justify-content: space-around;
@@ -10,7 +10,7 @@
   bottom: 0;
 
   &__container-logo {
-      width: 50%;
+    display: none;
   }
 
   &__logo {
