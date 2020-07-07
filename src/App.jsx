@@ -1,28 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-// import { BrowserRouter as Router, Route } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-const App = () => {
-  const [places, setPlaces] = useState([]);
+import Places from './components/pages/Places';
 
-  useEffect(() => {
-    const fetchPlaces = async () => {
-      const res = await axios('/api/places/');
-
-      setPlaces(res.data);
-    };
-    fetchPlaces();
-  }, []);
-
-  console.log(places);
+function App() {
   return (
-    <div>
-      {places.map((place) => (
-        <div key={place.id}>{place.id}</div>
-      ))}
-      ;
-    </div>
+    <Router>
+      <>
+        <Route exact path="/" component={Places} />
+      </>
+    </Router>
   );
-};
+}
 
 export default App;
