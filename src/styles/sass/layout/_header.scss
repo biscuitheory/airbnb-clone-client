@@ -1,0 +1,21 @@
+@import './styles/sass/layout/nav';
+
+.header {
+  width: 100%;
+  background-color: #f7b8b8;
+  // display: inline-flex;
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 0;
+
+  &__container-logo {
+      width: 50%;
+  }
+
+  &__logo {
+    background-color: #fa6f84;
+    max-width: 5rem;
+    height: auto;
+  }
+}

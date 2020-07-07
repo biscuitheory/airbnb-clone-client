@@ -1,0 +1,10 @@
+.nav {
+  background-color: red;
+  display: flex;
+  flex-direction: row;
+
+  &__link {
+    list-style: none;
+    padding: 2%;
+  }
+}

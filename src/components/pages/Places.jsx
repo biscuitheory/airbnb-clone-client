@@ -20,11 +20,13 @@ const Home = () => {
   return (
     <>
       <Header />
-      <div>
-        {places.map((place) => (
-          <PlaceItem key={place.id} place={place} />
-        ))}
-        ;
+      <div className="places">
+        <div className="places__place">
+          {places.map((place) => (
+            <PlaceItem key={place.id} place={place} />
+          ))}
+          ;
+        </div>
       </div>
       <Footer />
     </>

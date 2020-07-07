@@ -9,9 +9,9 @@ function PlaceItem(props) {
 
   return (
     <div>
-      <img src={photoPlace} alt="appartement" />
-      <h4> {name} </h4>
-      <p> {priceByNight * 30}€/mois </p>
+      <img className="place__image" src={photoPlace} alt="appartement" />
+      <p className="place__name"> {name} </p>
+      <p className="place__price"> {priceByNight * 30}€/mois </p>
     </div>
   );
 }
