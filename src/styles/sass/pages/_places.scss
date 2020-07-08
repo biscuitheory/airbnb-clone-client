@@ -1,10 +1,19 @@
 .places {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .place {
   &__image {
     width: 100%;
     border-radius: 5%;
+  }
+
+  &__name {
+    color: black;
+  }
+
+  &__price {
+    color: black;
   }
 }

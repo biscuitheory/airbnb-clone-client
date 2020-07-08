@@ -1,23 +1,24 @@
 import React from 'react';
 
-import { ReactComponent as Icon0 } from '../assets/images/icons/svg0.svg';
-import { ReactComponent as Icon1 } from '../assets/images/icons/svg1.svg';
-import { ReactComponent as Icon2 } from '../assets/images/icons/svg2.svg';
+import { ReactComponent as Explorer } from '../assets/images/icons/explorer.svg';
+import { ReactComponent as Enregistres } from '../assets/images/icons/enregistres.svg';
+import { ReactComponent as Connexion } from '../assets/images/icons/connexion.svg';
+import { ReactComponent as Voyages } from '../assets/images/icons/voyages.svg';
 
 function Nav() {
   return (
     <nav className="nav">
       <div className="nav__links">
         <a className="nav__link" href="/">
-          <Icon0 className="nav__icon" />
+          <Explorer className="nav__icon" />
           <span>Explorer</span>
         </a>
         <a className="nav__link" href="/">
-          <Icon1 className="nav__icon" />
+          <Enregistres className="nav__icon" />
           <span>Enregistrés</span>
         </a>
         <a className="nav__link" href="/">
-          <Icon2 className="nav__icon" />
+          <Connexion className="nav__icon" />
           <span>Connexion</span>
         </a>
       </div>

@@ -16,17 +16,13 @@ const Home = () => {
     };
     fetchPlaces();
   }, []);
-
   return (
     <>
       <Header />
       <div className="places">
-        <div className="places__place">
-          {places.map((place) => (
-            <PlaceItem key={place.id} place={place} />
-          ))}
-          ;
-        </div>
+        {places.map((place) => (
+          <PlaceItem key={place.id} place={place} />
+        ))}
       </div>
       <Footer />
     </>
