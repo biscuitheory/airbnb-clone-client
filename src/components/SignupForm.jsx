@@ -1,44 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import useForm from './useForm';
+import validate from './ValidateSignup';
 
 const SignupForm = () => {
-  const initialInputState = { role: 'host', first_name: '', last_name: '', email: '', password: '' };
-  const [eachEntry, setEachEntry] = useState(initialInputState);
-  const { role, firstName, lastName, email, password } = eachEntry;
-  // const [isSignedIn, setIsSignedIn] = useState(false);
-  // const [isError, setIsError] = useState(false);
-  // // const [isFirstName, setFirstName] = useState();
-  // const [email, setEmail] = useState(null);
-  // const [password, setPassword] = useState(null);
-  // const [isHost, setHost] = useState(null);
+  const { handleChange, handleSubmit, values, errors } = useForm(submit, validate);
 
-  // useEffect(() => {
-  //   postSignup();
-  // }, []);
-
-  // const postSignup = async () => {
-  //   const res = await axios('/api/signin/');
-  //   const data = await res.json();
-  //   setIsSignedIn(res.data);
-  // };
-
-  const handleInputChange = (e) => {
-    setEachEntry({
-      ...eachEntry,
-      [e.target.name]: e.target.value,
-    });
-    console.log(eachEntry);
-  };
-
-  // const handleFinalSubmit = (e) => {
-    
-  // };
+  function submit() {
+    console.log('Submitted Succesfully');
+  }
 
   return (
     <div className="signup__container">
       <h3>Effectuer mon inscription</h3>
-      <form method="POST" action="/api/signup">
+      <form onSubmit={handleSubmit} noValidate method="POST" action="/api/signup">
         <div className="box-radios">
           <div>
             <label htmlFor="Host">
@@ -48,8 +24,8 @@ const SignupForm = () => {
                 name="role"
                 id="Host"
                 className="signup__input--host"
-                onChange={handleInputChange}
-                value={role}
+                onChange={handleChange}
+                value={values.role}
               />
             </label>
           </div>
@@ -61,8 +37,8 @@ const SignupForm = () => {
                 name="role"
                 id="Tourist"
                 className="signup__input--tourist"
-                onChange={handleInputChange}
-                value={role}
+                onChange={handleChange}
+                value={values.role}
               />
             </label>
           </div>
@@ -71,28 +47,36 @@ const SignupForm = () => {
           type="text"
           name="first_name"
           placeholder="Prénom"
-          onChange={handleInputChange}
-          value={firstName}
+          onChange={handleChange}
+          value={values.firstName}
         />
         <input
           type="text"
           name="last_name"
           placeholder="Nom"
-          onChange={handleInputChange}
-          value={lastName}
+          onChange={handleChange}
+          value={values.lastName}
         />
-        <input
-          type="email"
-          placeholder="Adresse e-mail"
-          onChange={handleInputChange}
-          value={email}
-        />
-        <input
-          type="password"
-          placeholder="Mot de passe"
-          onChange={handleInputChange}
-          value={password}
-        />
+        <div>
+          <input
+            type="email"
+            name="email"
+            placeholder="Adresse e-mail"
+            onChange={handleChange}
+            value={values.email}
+          />
+          {errors.email && <p className="error">{errors.email}</p>}
+        </div>
+        <div>
+          <input
+            type="password"
+            name="password"
+            placeholder="Mot de passe"
+            onChange={handleChange}
+            value={values.password}
+          />
+          {errors.password && <p className="error">{errors.password}</p>}
+        </div>
         <button type="submit" className="signup__button">
           S'inscrire
         </button>

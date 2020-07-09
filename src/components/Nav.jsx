@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { ReactComponent as Explorer } from '../assets/images/icons/explorer.svg';
 import { ReactComponent as Enregistres } from '../assets/images/icons/enregistres.svg';
@@ -16,10 +17,10 @@ function Nav() {
           <Enregistres className="nav__icon" />
           <span>Enregistrés</span>
         </a>
-        <a className="nav__link" href="/">
+        <Link className="nav__link" to="/login">
           <Connexion className="nav__icon" />
           <span>Connexion</span>
-        </a>
+        </Link>
       </div>
     </nav>
   );

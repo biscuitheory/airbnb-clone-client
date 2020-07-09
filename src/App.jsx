@@ -1,12 +1,13 @@
 import React, { useReducer } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 // import PrivateRoute from './PrivateRoute';
-import { AuthContext } from './context/Auth';
+import { AuthContext } from './context/auth';
 
 import './App.scss';
 
 import Places from './components/pages/Places';
 import Place from './components/pages/Place';
+import Bookings from './components/pages/Bookings';
 import Booking from './components/pages/Booking';
 import Signup from './components/pages/Signup';
 import Login from './components/pages/Login';
@@ -58,8 +59,10 @@ const App = (props) => {
           <Route exact path="/" component={Places} />
           <Route exact path="/rooms/:id" component={Place} />
           {/* <PrivateRoute exact path="/rooms/:id/booking" component={Booking} /> */}
+          <Route exact path="/bookings" component={Bookings} />
           <Route exact path="/rooms/:id/booking" component={Booking} />
           <Route exact path="/signup" component={Signup} />
+          <Route exact path="/login" component={Login} />
         </>
       </Router>
     </AuthContext.Provider>
