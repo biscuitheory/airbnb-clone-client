@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useReducer } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 // import PrivateRoute from './PrivateRoute';
 // import { AuthContext } from './context/auth';
@@ -44,10 +44,17 @@ const reducer = (state, action) => {
 };
 
 const App = (props) => {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
   return (
-    //pour tester les PrivateRoute faudra mettre la value à false}
+    // pour tester les PrivateRoute faudra mettre la value à false}
     // <AuthContext.Provider value={true}>
-    <AuthContext.Provider>
+    <AuthContext.Provider
+      value={{
+        state,
+        dispatch,
+      }}
+    >
       <Router>
         <>
           <Route exact path="/" component={Places} />

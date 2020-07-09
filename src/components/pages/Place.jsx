@@ -18,13 +18,14 @@ const Place = () => {
     };
     fetchPlace();
   }, [id]);
-  console.log(place);
+
   return (
     <>
       <Link to="/">&#8249; Logements • Airbnb</Link>
       <h1>{name}</h1>
       <p>{city}</p>
       <p>C'est une perle rare.Les réservations sont fréquentes chez</p>
+      <button type="button">Réserver</button>
       <Footer />
     </>
   );

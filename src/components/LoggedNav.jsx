@@ -2,7 +2,8 @@ import React from 'react';
 
 import { ReactComponent as Explorer } from '../assets/images/icons/explorer.svg';
 import { ReactComponent as Enregistres } from '../assets/images/icons/enregistres.svg';
-import { ReactComponent as Connexion } from '../assets/images/icons/connexion.svg';
+import { ReactComponent as Voyages } from '../assets/images/icons/voyages.svg';
+import { ReactComponent as Messages } from '../assets/images/icons/messages.svg';
 
 function Nav() {
   return (
@@ -17,12 +18,20 @@ function Nav() {
           <span>Enregistrés</span>
         </a>
         <a className="nav__link" href="/">
-          <Connexion className="nav__icon" />
-          <span>Connexion</span>
+          <Voyages className="nav__icon" />
+          <span>Voyages</span>
+        </a>
+        <a className="nav__link" href="/">
+          <Messages className="nav__icon" />
+          <span>Messages</span>
+        </a>
+        <a className="nav__link" href="/">
+          <Voyages className="nav__icon" />
+          <span>Profil</span>
         </a>
       </div>
     </nav>
   );
 }
 
-export default Nav;
+export default LoggedNav;
