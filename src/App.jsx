@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 // import PrivateRoute from './PrivateRoute';
-// import { AuthContext } from './context/auth';
+import { AuthContext } from './context/Auth';
 
 import './App.scss';
 
@@ -10,8 +10,6 @@ import Place from './components/pages/Place';
 import Booking from './components/pages/Booking';
 import Signup from './components/pages/Signup';
 import Login from './components/pages/Login';
-
-export const AuthContext = React.createContext();
 
 const initialState = {
   isAuthenticated: false,
