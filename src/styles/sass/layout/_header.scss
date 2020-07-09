@@ -3,12 +3,11 @@
 .header {
   width: 100%;
   background-color: #ffffff;
-  // display: inline-flex;
   display: flex;
   justify-content: space-around;
   position: fixed;
   bottom: 0;
-
+  border-top: solid 1px #d6d6d6;
   &__container-logo {
     display: none;
   }

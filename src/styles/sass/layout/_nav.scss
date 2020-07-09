@@ -1,50 +1,67 @@
+$link-display: flex;
+$link-flex-direction: column;
+$link-align-items: center;
+$link-padding: 0.5rem 1rem;
+$link-text-decoration: none;
+$link-color: #484848;
+$link-color-hover-active: #ff627a;
+
 .nav {
-  //background-color: red;
   display: flex;
   flex-direction: row;
+  justify-content: center;
   &__links {
     display: flex;
-  }
-
-  &__link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    color: #484848;
-    &:hover,
-    &:active {
-      color: #ff627a;
-    }
-    span {
-      padding-top: 0.3rem;
-    }
-  }
-
-  &__icon {
-    width: 1.5rem !important;
-    &:hover,
-    &:active {
-      color: #ff627a;
-    }
-  }
-  // SASS
-  /* &__links {
-    display: flex;
+    justify-content: center;
     &__link {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 0.5rem 1rem;
-      &:hover,
-      &:active {
-        color: #ff627a;
-      }
       &__icon {
-        color: #484848;
         width: 1.5rem !important;
+        &:hover,
+        &:active {
+          color: #ff627a;
+        }
+      }
+      &__explorer {
+        display: $link-display;
+        flex-direction: $link-flex-direction;
+        align-items: $link-align-items;
+        padding: $link-padding;
+        text-decoration: $link-text-decoration;
+        color: $link-color;
+        &:hover,
+        &:active {
+          color: $link-color-hover-active;
+        }
+      }
+      &__enregistres {
+        display: $link-display;
+        flex-direction: $link-flex-direction;
+        align-items: $link-align-items;
+        padding: $link-padding;
+        text-decoration: $link-text-decoration;
+        color: $link-color;
+        &:hover,
+        &:active {
+          color: $link-color-hover-active;
+        }
+      }
+      &__connexion {
+        display: $link-display;
+        flex-direction: $link-flex-direction;
+        align-items: $link-align-items;
+        padding: $link-padding;
+        text-decoration: $link-text-decoration;
+        color: $link-color;
+        &:hover,
+        &:active {
+          color: $link-color-hover-active;
+        }
       }
     }
-  } */
+  }
+
+  span {
+    padding-top: 0.3rem;
+    font-size: 10px;
+  }
 }

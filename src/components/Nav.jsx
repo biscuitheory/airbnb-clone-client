@@ -9,17 +9,23 @@ function Nav() {
   return (
     <nav className="nav">
       <div className="nav__links">
-        <a className="nav__link" href="/">
-          <Explorer className="nav__icon" />
-          <span>Explorer</span>
+        <a className="nav__links__link__explorer" href="/">
+          <Explorer className="nav__links__link__icon" />
+          <span>
+            <strong>Explorer</strong>
+          </span>
         </a>
-        <a className="nav__link" href="/">
-          <Enregistres className="nav__icon" />
-          <span>Enregistrés</span>
+        <a className="nav__links__link__enregistres" href="/">
+          <Enregistres className="nav__links__link__icon" />
+          <span>
+            <strong>Enregistrés</strong>
+          </span>
         </a>
-        <Link className="nav__link" to="/login">
-          <Connexion className="nav__icon" />
-          <span>Connexion</span>
+        <Link className="nav__links__link__connexion" to="/login">
+          <Connexion className="nav__links__link__icon" />
+          <span>
+            <strong>Connexion</strong>
+          </span>
         </Link>
       </div>
     </nav>
