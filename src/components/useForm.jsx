@@ -26,6 +26,7 @@ const useForm = (cb, validate) => {
   };
 
   const handleSubmit = (e) => {
+    console.log('form', values);
     e.preventDefault();
     //handling err}
     setErrors(validate(values));
