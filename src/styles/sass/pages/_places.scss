@@ -17,14 +17,3 @@
     color: black;
   }
 }
-
-header {
-  .nav__links__link {
-    &__explorer {
-      color: #ff627a;
-    }
-    &__connexion {
-      display: flex !important;
-    }
-  }
-}

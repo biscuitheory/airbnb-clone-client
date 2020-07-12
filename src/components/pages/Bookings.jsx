@@ -3,8 +3,6 @@ import axios from 'axios';
 import Moment from 'react-moment';
 
 import { AuthContext } from '../../context/auth';
-
-// import photoPlace from '../../assets/images/photoPlace.jpg';
 import photoPlace from '../../assets/images/photoPlace.jpg';
 import { ReactComponent as FlashDroit } from '../../assets/images/icons/flash-droit.svg';
 
@@ -20,7 +18,6 @@ const Bookings = () => {
       });
 
       setBookings(getBookings.data);
-      console.log(getBookings);
     };
     fetchBookings();
   }, []);

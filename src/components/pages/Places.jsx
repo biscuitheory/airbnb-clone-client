@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import PlaceItem from '../PlaceItem';
-import Header from '../Header';
-import Footer from '../Footer';
 
 const Home = () => {
   const [places, setPlaces] = useState([]);
@@ -18,13 +16,11 @@ const Home = () => {
   }, []);
   return (
     <>
-      <Header />
       <div className="places">
         {places.map((place) => (
           <PlaceItem key={place.id} place={place} />
         ))}
       </div>
-      <Footer />
     </>
   );
 };

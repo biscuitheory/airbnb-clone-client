@@ -1,20 +1,15 @@
-@import './styles/sass/layout/nav';
-
 .header {
   width: 100%;
   background-color: #ffffff;
-  display: flex;
+  display: none;
   justify-content: space-around;
-  position: fixed;
-  bottom: 0;
-  border-top: solid 1px #d6d6d6;
   &__container-logo {
     display: none;
-  }
 
-  &__logo {
-    background-color: #fa6f84;
-    max-width: 5rem;
-    height: auto;
+    &__logo {
+      background-color: #fa6f84;
+      max-width: 5rem;
+      height: auto;
+    }
   }
 }
