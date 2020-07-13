@@ -1,18 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
+
+import { AuthContext } from '../../App';
 
 // import photoPlace from '../../assets/images/photoPlace.jpg';
 
 const Bookings = () => {
+  const { state: authState } = useContext(AuthContext);
   const [bookings, setBookings] = useState([]);
 
   useEffect(() => {
+    console.log(authState);
     const fetchBookings = async () => {
-      const token =
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJiYjBjYTBlYy01Mzc5LTQ3YzQtODdmNy1jNTVkOTYwN2QxNzMiLCJ1c2VyUm9sZSI6InRvdXJpc3QiLCJpYXQiOjE1OTQyODg1MTJ9.e_eUy21k7GE-lcpCZd5Md_YW0-ca4rDwo-IWgadXXt8';
-
       const getBookings = await axios('/api/bookings', {
-        headers: { Authorization: `Bearer ${token}` },
+        headers: { Authorization: `Bearer ${authState.token}` },
       });
 
       setBookings(getBookings.data);

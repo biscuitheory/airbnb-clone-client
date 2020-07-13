@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import axios from 'axios';
 
 import { AuthContext } from '../../context/auth';
+import { Link } from 'react-router-dom';
 
 export const Login = () => {
   const { dispatch } = useContext(AuthContext);
@@ -29,22 +30,36 @@ export const Login = () => {
       isSubmitting: true,
       errorMessage: null,
     });
-
-    const res = await axios('/api/signin', {
-      method: 'post',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        email: data.email,
-        password: data.password,
-      }),
-    });
+    try {
+      const res = await axios('http://localhost:8080/api/signin', {
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        data: JSON.stringify({
+          email: data.email,
+          password: data.password,
+        }),
+      });
+      if (res.status === 200) {
+        return dispatch({
+          type: 'LOGIN',
+          payload: res,
+        });
+      }
+      throw res;
+    } catch (res) {
+      return setData({
+        ...data,
+        isSubmitting: false,
+        errorMessage: res.message,
+      });
+    }
   };
 
   return (
     <div className="login">
-      <form className="login__form">
+      <form className="login__form" onSubmit={handleFormSubmit}>
         <label htmlFor="email">
           <input
             type="text"
@@ -52,7 +67,7 @@ export const Login = () => {
             onChange={handleInputChange}
             name="email"
             id="email"
-            placeHolder="Adresse e-mail"
+            placeholder="Adresse e-mail"
           />
         </label>
         <label htmlFor="password">
@@ -62,13 +77,13 @@ export const Login = () => {
             onChange={handleInputChange}
             name="password"
             id="password"
-            placeHolder="Mot de passe"
+            placeholder="Mot de passe"
           />
         </label>
 
         {data.errorMessage && <span className="form__error">{data.errorMessage}</span>}
 
-        <button type="button" disabled={data.isSubmitting}>
+        <button type="submit" disabled={data.isSubmitting}>
           {data.isSubmitting ? 'Authentification...' : 'Se connecter'}
         </button>
       </form>
@@ -76,6 +91,7 @@ export const Login = () => {
         <p>Vous n'avez pas de compte ?</p>
         <button type="button">Inscription</button>
       </div>
+      <Link to="/bookings">Bookings</Link>
     </div>
   );
 };
