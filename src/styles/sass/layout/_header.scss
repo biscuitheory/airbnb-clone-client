@@ -1,5 +1,5 @@
 .header {
-  width: 100%;
+  width: 100vw;
   background-color: #ffffff;
   display: none;
   justify-content: space-around;
@@ -13,3 +13,22 @@
     }
   }
 }
+
+//   width: 100vw;
+//   background-color: #ffffff;
+//   // display: inline-flex;
+//   display: flex;
+//   justify-content: space-around;
+//   position: fixed;
+//   bottom: 0;
+
+//   &__container-logo {
+//     display: none;
+//   }
+
+//   &__logo {
+//     background-color: #fa6f84;
+//     max-width: 5rem;
+//     height: auto;
+//   }
+// }

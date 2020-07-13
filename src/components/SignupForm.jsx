@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
+
 import useForm from './useForm';
 import validate from './ValidateSignup';
 
 const SignupForm = () => {
   const { handleChange, handleSubmit, values, errors } = useForm(submit, validate);
-
+  const history = useHistory();
   async function submit() {
     try {
       const res = await axios.post('/api/signup', {
@@ -19,6 +20,7 @@ const SignupForm = () => {
       if (res) {
         console.log('Submitted Succesfully');
         console.log('resultats', res);
+        history.push('/login');
       }
     } catch (err) {
       console.log('err from signup', err);
