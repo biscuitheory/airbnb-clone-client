@@ -13,7 +13,7 @@ const Place = () => {
 
   useEffect(() => {
     const fetchPlace = async () => {
-      const res = await axios(`/api/places/${id}`);
+      const res = await axios(`http://localhost:8080/api/places/${id}`);
       setPlace(res.data);
     };
     fetchPlace();

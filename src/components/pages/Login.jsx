@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import axios from 'axios';
 
 import { AuthContext } from '../../context/auth';
+import { Link } from 'react-router-dom';
 
 export const Login = () => {
   const { dispatch } = useContext(AuthContext);
@@ -23,7 +24,6 @@ export const Login = () => {
   };
 
   const handleFormSubmit = async (event) => {
-    console.log(data);
     event.preventDefault();
     setData({
       ...data,
@@ -31,27 +31,28 @@ export const Login = () => {
       errorMessage: null,
     });
     try {
-      const res = await axios.post(`http://localhost:8080/api/signin`, {
+      const res = await axios('http://localhost:8080/api/signin', {
+        method: 'post',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
+        data: JSON.stringify({
           email: data.email,
           password: data.password,
         }),
       });
-      if (res.ok) {
+      if (res.status === 200) {
         return dispatch({
           type: 'LOGIN',
           payload: res,
         });
       }
       throw res;
-    } catch (error) {
+    } catch (res) {
       return setData({
         ...data,
         isSubmitting: false,
-        errorMessage: error.message || error.statusText,
+        errorMessage: res.message,
       });
     }
   };
@@ -90,6 +91,7 @@ export const Login = () => {
         <p>Vous n'avez pas de compte ?</p>
         <button type="button">Inscription</button>
       </div>
+      <Link to="/bookings">Bookings</Link>
     </div>
   );
 };
