@@ -18,13 +18,16 @@
 }
 
 .nav {
-  width: 100%;
+  border: 1px solid pink;
+  width: 100vw;
   background-color: #ffffff;
   border-top: solid 1px #d6d6d6;
   display: flex;
   justify-content: center;
-  position: fixed;
-  bottom: 0;
+  align-items: center;
+  text-decoration: none;
+  // position: fixed;
+  // bottom: 0;
   &__link {
     border: 1px solid blue;
     display: flex;
@@ -69,4 +72,12 @@
     padding-top: 0.3rem;
     font-size: 10px;
   }
+}
+
+.breakpoint__small-down {
+  display: flex;
+  border: 1px solid purple;
+  max-width: auto;
+  height: auto;
+  // background-color: green;
 }

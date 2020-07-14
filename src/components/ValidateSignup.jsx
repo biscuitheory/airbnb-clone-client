@@ -1,5 +1,5 @@
 export default function validateSignup(values) {
-  let errors = {};
+  const errors = {};
   if (!values.first_name) {
     errors.first_name = 'Un prénom est obligatoire.';
   } else if (typeof values.first_name !== 'string') {

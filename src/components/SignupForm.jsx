@@ -10,7 +10,7 @@ const SignupForm = () => {
   const history = useHistory();
   async function submit() {
     try {
-      const res = await axios.post('/api/signup', {
+      const res = await axios.post('http://localhost:8080/api/signup', {
         role: values.role,
         first_name: values.first_name,
         last_name: values.last_name,

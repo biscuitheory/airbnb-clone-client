@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Switch, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Modal from 'react-modal';
 
 import ModalSignup from './ModalSignup';
