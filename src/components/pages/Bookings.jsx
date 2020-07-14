@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
+import Moment from 'react-moment';
 
 import { AuthContext } from '../../context/auth';
-
-// import photoPlace from '../../assets/images/photoPlace.jpg';
+import photoPlace from '../../assets/images/photoPlace.jpg';
+import { ReactComponent as FlashDroit } from '../../assets/images/icons/flash-droit.svg';
 
 const Bookings = () => {
   const { state: authState } = useContext(AuthContext);
@@ -17,28 +18,52 @@ const Bookings = () => {
       });
 
       setBookings(getBookings.data);
-      // console.log(getBookings);
     };
     fetchBookings();
   }, []);
   return (
     <>
-      <h2>Voyages</h2>
-      <p>Tous vos bookings !!!!</p>
-      <div>
-        {bookings.map((booking) => (
-          <div key={booking.id}>
-            <div>
-              {/* <img className="place__image" src={photoPlace} alt="appartement" />
-              <h4>{booking.Place.City}</h4> */}
-              <h4>{booking.Place.name}</h4>
-              <p>{booking.Place.description}</p>
-              <p>{booking.check_in}</p>
-              <p>{booking.check_out}</p>
+      <div className="bookings">
+        <h2>Voyages</h2>
+        <p>Tous vos bookings !!!!</p>
+        <div>
+          {bookings.map((booking) => (
+            <div key={booking.id}>
+              <div className="bookings__booking">
+                <img className="bookings__booking__image" src={photoPlace} alt="appartement" />
+                <div className="bookings__booking__info">
+                  <div className="bookings__booking__info__text-color">
+                    <span>
+                      <Moment format="D MMM">{booking.check_in}</Moment>
+                    </span>
+                    <span> - </span>
+                    <span>
+                      <Moment format="D MMM">{booking.check_out}</Moment>
+                    </span>
+                  </div>
+                  <h2>{booking.Place.City.name}</h2>
+                  <div className="bookings__booking__info__info-link">
+                    <div className="bookings__booking__info__info-link__left">
+                      <img
+                        className="bookings__booking__info__info-link__left__image-small"
+                        src={photoPlace}
+                        alt="appartement"
+                      />
+                      <p className="bookings__booking__info__info-link__left__name">
+                        {booking.Place.name}
+                      </p>
+                    </div>
+                    <FlashDroit className="bookings__booking__info__info-link_right" />
+                  </div>
+                </div>
+                <hr />
+                <p className="bookings__booking__info__plus">
+                  <strong>Affichez plus de projets de voyage</strong>
+                </p>
+              </div>
             </div>
-            <hr />
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </>
   );
