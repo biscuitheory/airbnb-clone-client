@@ -107,7 +107,7 @@ const SignupForm = () => {
             value={values.password}
           />
           {errors.password && <p className="error">{errors.password}</p>}
-          <button type="submit" className="signup__button">
+          <button onClick={submit} type="submit" className="signup__button">
             S'inscrire
           </button>
         </div>

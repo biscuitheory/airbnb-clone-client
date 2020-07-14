@@ -1,3 +1,22 @@
+.breakpoint__small-down {
+  width: 100vw;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-evenly;
+  position: fixed;
+  bottom: 0;
+  border: 1px solid red;
+  &__container-logo {
+    display: none;
+  }
+
+  &__logo {
+    background-color: #fa6f84;
+    max-width: 5rem;
+    height: auto;
+  }
+}
+
 .nav {
   width: 100%;
   background-color: #ffffff;

@@ -2,20 +2,4 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
-  input {
-    border: 1px solid #a2a2a2;
-    border-radius: 8px;
-    height: 4em;
-    padding-left: 1em;
-    cursor: pointer;
-    outline: none;
-    font-family: 'Airbnb-Cereal';
-    font-size: 1em;
-
-    &:focus {
-       border: 2px solid #000000;
-       border-radius: 8px;
-    }
-  }
 }
