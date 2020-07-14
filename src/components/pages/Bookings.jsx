@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 
-import { AuthContext } from '../../App';
+import { AuthContext } from '../../context/auth';
 
 // import photoPlace from '../../assets/images/photoPlace.jpg';
 
@@ -12,7 +12,7 @@ const Bookings = () => {
   useEffect(() => {
     console.log(authState);
     const fetchBookings = async () => {
-      const getBookings = await axios('/api/bookings', {
+      const getBookings = await axios('http://localhost:8080/api/bookings', {
         headers: { Authorization: `Bearer ${authState.token}` },
       });
 
@@ -20,7 +20,7 @@ const Bookings = () => {
       // console.log(getBookings);
     };
     fetchBookings();
-  }, [bookings]);
+  }, []);
   return (
     <>
       <h2>Voyages</h2>
