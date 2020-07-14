@@ -19,8 +19,8 @@ import { ReactComponent as VoyagesIcon } from '../assets/images/icons/vali.svg';
 import { ReactComponent as MessagesIcon } from '../assets/images/icons/message.svg';
 
 const initialState = {
-  isAuthenticated: false,
-  token: null,
+  isAuthenticated: !!localStorage.getItem('token'),
+  token: localStorage.getItem('token') || {},
 };
 
 const reducer = (state, action) => {
