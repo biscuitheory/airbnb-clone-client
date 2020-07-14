@@ -2,7 +2,6 @@ import React, { useState, useContext } from 'react';
 import axios from 'axios';
 
 import { AuthContext } from '../../context/auth';
-import { Link } from 'react-router-dom';
 
 export const Login = () => {
   const { dispatch } = useContext(AuthContext);
@@ -57,13 +56,6 @@ export const Login = () => {
     }
   };
 
-  const logOut = async (event) => {
-    event.preventDefault();
-    return dispatch({
-      type: 'LOGOUT',
-    });
-  };
-
   return (
     <div className="login">
       <form className="login__form" onSubmit={handleFormSubmit}>
@@ -97,9 +89,6 @@ export const Login = () => {
       <div>
         <p>Vous n'avez pas de compte ?</p>
         <button type="button">Inscription</button>
-        <button type="button" onClick={logOut}>
-          Se déconnecter
-        </button>
       </div>
     </div>
   );

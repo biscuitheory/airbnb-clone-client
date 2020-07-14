@@ -3,6 +3,10 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // import PrivateRoute from './PrivateRoute';
 import { AuthContext } from './context/auth';
 
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Nav from './components/Nav';
+
 import Places from './components/pages/Places';
 import Place from './components/pages/Place';
 import Bookings from './components/pages/Bookings';
@@ -11,12 +15,9 @@ import Signup from './components/pages/Signup';
 import Login from './components/pages/Login';
 import Enregistres from './components/pages/Enregistres';
 import Messages from './components/pages/Messages';
+import Profil from './components/pages/Profil';
 
 import './App.scss';
-
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Nav from './components/Nav';
 
 const initialState = {
   isAuthenticated: !!localStorage.getItem('token'),
@@ -59,7 +60,7 @@ function App() {
       >
         <Router>
           <>
-            <Nav />
+            <Nav state={state} />
             <Switch>
               <Route exact path="/" component={Places} />
               <Route exact path="/rooms/:id" component={Place} />
@@ -69,6 +70,7 @@ function App() {
               <Route exact path="/login" component={Login} />
               <Route exact path="/wishlists" component={Enregistres} />
               <Route exact path="/inbox" component={Messages} />
+              <Route exact path="/account-settings" component={Profil} />
             </Switch>
           </>
         </Router>
