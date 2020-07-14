@@ -1,17 +1,12 @@
-import React, { useReducer } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-// import PrivateRoute from './PrivateRoute';
-import { AuthContext } from './context/auth';
+import React from 'react';
 
 import './App.scss';
 
-import Places from './components/pages/Places';
-import Place from './components/pages/Place';
-import Bookings from './components/pages/Bookings';
-import Booking from './components/pages/Booking';
-import Signup from './components/pages/Signup';
-import Login from './components/pages/Login';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Nav from './components/Nav';
 
+<<<<<<< HEAD
 const initialState = {
   isAuthenticated: false,
   token: null,
@@ -60,7 +55,18 @@ const App = () => {
         </>
       </Router>
     </AuthContext.Provider>
+=======
+function App() {
+  return (
+    <div className="App">
+      <Header />
+
+      <Nav />
+
+      <Footer />
+    </div>
+>>>>>>> a0b0ee9... refactoriser navbar
   );
-};
+}
 
 export default App;
