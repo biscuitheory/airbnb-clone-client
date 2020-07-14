@@ -57,6 +57,13 @@ export const Login = () => {
     }
   };
 
+  const logOut = async (event) => {
+    event.preventDefault();
+    return dispatch({
+      type: 'LOGOUT',
+    });
+  };
+
   return (
     <div className="login">
       <form className="login__form" onSubmit={handleFormSubmit}>
@@ -90,8 +97,10 @@ export const Login = () => {
       <div>
         <p>Vous n'avez pas de compte ?</p>
         <button type="button">Inscription</button>
+        <button type="button" onClick={logOut}>
+          Se déconnecter
+        </button>
       </div>
-      <Link to="/bookings">Bookings</Link>
     </div>
   );
 };
