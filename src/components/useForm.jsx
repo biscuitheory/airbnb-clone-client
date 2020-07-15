@@ -1,51 +1,49 @@
 import { useState, useEffect } from 'react';
 
 const useForm = (cb, validate) => {
-  const [values, setValues] = useState({
+  const initialState = {
     role: '',
     first_name: '',
     last_name: '',
     email: '',
     password: '',
-  });
-  const [errors, setErrors] = useState({
-    role: '',
-    first_name: '',
-    last_name: '',
-    email: '',
-    password: '',
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
+    isSubmitting: false,
+    errorMessage: null,
+  };
+
+  const [data, setData] = useState(initialState);
+  const [errors, setErrors] = useState({});
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    setValues({
-      ...values,
+    setData({
+      ...data,
       [name]: value,
     });
-    console.log(value);
   };
 
-  const handleSubmit = (e) => {
-    console.log('form', values);
-    e.preventDefault();
-    //handling err}
-    setErrors(validate(values));
-    setIsSubmitting(true);
-    // cb();
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    setData({
+      ...data,
+      isSubmitting: true,
+      errorMessage: null,
+    });
+    setErrors(validate(data));
   };
 
   useEffect(() => {
-    if (Object.keys(errors).length === 0 && isSubmitting) {
+    if (Object.keys(errors).length === 0 && data.isSubmitting) {
       cb();
     }
   }, [errors]);
 
   return {
     handleInputChange,
-    handleSubmit,
-    values,
+    handleFormSubmit,
+    data,
     errors,
+    setData,
   };
 };
 

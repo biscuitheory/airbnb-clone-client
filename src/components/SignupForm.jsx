@@ -6,16 +6,16 @@ import useForm from './useForm';
 import validate from './ValidateSignup';
 
 const SignupForm = () => {
-  const { handleInputChange, handleSubmit, values, errors } = useForm(submit, validate);
+  const { handleInputChange, handleFormSubmit, data, errors } = useForm(submit, validate);
   const history = useHistory();
   async function submit() {
     try {
       const res = await axios.post('http://localhost:8080/api/signup', {
-        role: values.role,
-        first_name: values.first_name,
-        last_name: values.last_name,
-        email: values.email,
-        password: values.password,
+        role: data.role,
+        first_name: data.first_name,
+        last_name: data.last_name,
+        email: data.email,
+        password: data.password,
       });
       if (res) {
         console.log('Submitted Succesfully');
@@ -31,7 +31,7 @@ const SignupForm = () => {
     <div className="signup">
       <h1>Effectuer mon inscription</h1>
       <form
-        onSubmit={handleSubmit}
+        onSubmit={handleFormSubmit}
         noValidate
         method="POST"
         action="/api/signup"
@@ -71,7 +71,7 @@ const SignupForm = () => {
             name="first_name"
             placeholder="Prénom"
             onChange={handleInputChange}
-            value={values.firstName}
+            value={data.firstName}
             className="signup__input-firstname"
           />
           <input
@@ -79,7 +79,7 @@ const SignupForm = () => {
             name="last_name"
             placeholder="Nom"
             onChange={handleInputChange}
-            value={values.lastName}
+            value={data.lastName}
             className="signup__input-lastname"
           />
           <p className="signup__input-comment">
@@ -93,7 +93,7 @@ const SignupForm = () => {
             name="email"
             placeholder="Adresse e-mail"
             onChange={handleInputChange}
-            value={values.email}
+            value={data.email}
           />
           {errors.email && <p className="error">{errors.email}</p>}
           <p className="signup__input-comment">
@@ -104,10 +104,10 @@ const SignupForm = () => {
             name="password"
             placeholder="Mot de passe"
             onChange={handleInputChange}
-            value={values.password}
+            value={data.password}
           />
           {errors.password && <p className="error">{errors.password}</p>}
-          <button onClick={submit} type="submit" className="signup__button">
+          <button type="submit" className="signup__button">
             S'inscrire
           </button>
         </div>

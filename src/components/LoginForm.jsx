@@ -1,18 +1,17 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 import { AuthContext } from '../context/auth';
-import useLoginForm from './useLoginForm';
+import useForm from './useForm';
 import validate from './ValidateLogin';
 
 const LoginForm = () => {
   const { dispatch } = useContext(AuthContext);
-  const { handleInputChange, handleFormSubmit, data, setData, errors } = useLoginForm(
-    submit,
-    validate
-  );
+  const { handleInputChange, handleFormSubmit, data, setData, errors } = useForm(submit, validate);
 
   async function submit() {
+    console.log('Submitted');
     try {
       const res = await axios.post('http://localhost:8080/api/signin', {
         email: data.email,
@@ -26,7 +25,6 @@ const LoginForm = () => {
       }
       throw res;
     } catch (error) {
-      console.log(error);
       return setData({
         ...data,
         isSubmitting: false,
@@ -46,6 +44,7 @@ const LoginForm = () => {
             name="email"
             id="email"
             placeholder="Adresse e-mail"
+            className="form__input"
           />
         </label>
         {errors.email && <p className="form__error">{errors.email}</p>}
@@ -58,18 +57,23 @@ const LoginForm = () => {
             name="password"
             id="password"
             placeholder="Mot de passe"
+            className="form__input"
           />
         </label>
 
         {errors.password && <p className="form__error">{errors.password}</p>}
 
-        <button onClick={submit} type="submit" disabled={data.isSubmitting}>
-          {data.isSubmitting ? 'Authentification...' : 'Se connecter'}
+        <button type="submit" disabled={data.isSubmitting} className="form__submit">
+          Connexion
         </button>
       </form>
-      <div>
+      <div className="login__redirection">
         <p>Vous n'avez pas de compte ?</p>
-        <button type="button">Inscription</button>
+        <Link to="/signup">
+          <button type="button" className="redirection__button">
+            Inscription
+          </button>
+        </Link>
       </div>
     </div>
   );

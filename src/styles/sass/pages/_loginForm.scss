@@ -1,0 +1,38 @@
+.login {
+  &__form {
+    padding: 20px;
+  }
+
+  &__redirection {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+
+    .redirection__button {
+      color: #ff5a5f;
+      background-color: #ffffff;
+      border: 1px solid #ff5a5f;
+      border-radius: 4px;
+      padding: 7px 21px;
+    }
+  }
+}
+
+.form {
+  &__submit {
+    width: 100%;
+    border: 1px solid #ff5a5f;
+    border-radius: 4px;
+    background-color: #ff5a5f;
+    color: #ffffff;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 27px;
+    padding-right: 27px;
+    cursor: pointer;
+  }
+
+  &__input {
+    width: 100%;
+  }
+}
