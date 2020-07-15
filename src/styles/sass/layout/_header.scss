@@ -10,21 +10,14 @@
     display: flex;
     justify-content: space-between;
     position: fixed;
-    // border: 1px solid red;
 
     &__container-logo {
       padding: 1.5rem 2rem;
-      // border: 1px solid purple;
     }
 
     &__logo {
       max-width: 2.2rem;
-      height: auto;
-    }
-
-    &__logofull {
-      max-width: 5vw;
-      height: auto;
+     
     }
   }
 }
@@ -39,10 +32,10 @@
     background-color: #ffffff;
     // border: 1px solid red;
 
-    .header__container-logo {
+    &__container-logo {
       // border: 1px solid green;
-      width: 8vw;
-      margin: 1em 2em;
+      width: 120px;
+      margin: 3vh 5vw;
     }
   }
 }

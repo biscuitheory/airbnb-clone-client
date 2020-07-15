@@ -20,7 +20,7 @@ function Header() {
       <Breakpoint large up>
         <header className="header">
           <div className="header__container-logo">
-            <img className="header__logofull" src={logoFull} alt="logo simple airbnb" />
+            <img className="header__logofull" src={logoFull} alt="logo complet airbnb" />
           </div>
           <TopNavbar />
         </header>

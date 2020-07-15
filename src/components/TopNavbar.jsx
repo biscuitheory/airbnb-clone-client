@@ -15,65 +15,67 @@ function TopNavbar() {
   return (
     <>
       <nav className="topnav">
-        <ul className="topnav__dropnavone">
-          <li>
-            <a>
-              <img className="topnav__dropnavone-icon" src={worldIcon} alt="icône langues devise" />
-              <img
-                className="topnav__dropnavone-icon-bis"
-                src={unrollIcon}
-                alt="icône déroule menu"
-              />
-            </a>
-
-            <ul className="topnav__dropdown">
-              <li>
-                <a href="#">
-                  <img
-                    className="topnav__dropnavone-icon"
-                    src={worldIcon}
-                    alt="icône langues devise"
-                  />
-                  Français (FR)
-                </a>
-              </li>
-              <li>
-                <a href="#">€ EUR</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-        <ul className="topnav__dropnavtwo">
-          <li>
-            <a>
-              <img className="topnav__dropnavtwo-icon" src={listIcon} alt="icône langues devise" />
-              <img className="topnav__dropnavtwo-icon-bis" src={userIcon} alt="" />
-            </a>
-            <ul className="topnav__dropdown">
-              <li>
-                <a href="#">Connexion</a>
-              </li>
-              <li>
-                <Link className="topnav__link" onClick={() => setModalIsOpen(true)}>
-                  <span>
-                    <strong>Inscription</strong>
-                  </span>
-                </Link>
-                <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}>
-                  <button
-                    type="button"
-                    className="cross-btn"
-                    title="close modal"
-                    onClick={() => setModalIsOpen(false)}
-                  >
-                    ✕
-                  </button>
-                  <ModalSignup />
-                </Modal>
-              </li>
-            </ul>
-          </li>
-        </ul>
+        <div className="topnav__dropdownone">
+          <button type="button" className="topnav__dropdownone-button">
+            <img
+              className="topnav__dropdownone-button-iconone"
+              src={worldIcon}
+              alt="icône langues devise"
+            />
+            <img
+              className="topnav__dropdownone-button-icontwo"
+              src={unrollIcon}
+              alt="icône menu deroulant"
+            />
+          </button>
+          <ul className="topnav__dropdownone-list">
+            <li className="topnav__dropdownone-item">
+              <a href="#">
+                <img
+                  className="topnav__dropdownone-button-iconone"
+                  src={worldIcon}
+                  alt="icône langues devise"
+                />
+                <p>Français (FR)</p>
+              </a>
+            </li>
+            <li className="topnav__dropdownone-item">
+              <a href="#">
+                <p>€</p>
+                <p>EUR</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div className="topnav__dropdowntwo">
+          <button type="button" className="topnav__dropdowntwo-button">
+            <img className="topnav__dropdowntwo-button-iconone" src={listIcon} alt="icône liste" />
+            <img className="topnav__dropdowntwo-button-icontwo" src={userIcon} alt="" />
+          </button>
+          <ul className="topnav__dropdowntwo-list">
+            <li className="topnav__dropdowntwo-item">
+              <a href="/login">Connexion</a>
+            </li>
+            <li className="topnav__dropdowntwo-item">
+              <Link className="topnav__link" onClick={() => setModalIsOpen(true)}>
+                <span>
+                  <strong>Inscription</strong>
+                </span>
+              </Link>
+              <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}>
+                <button
+                  type="button"
+                  className="crossbtn"
+                  title="close modal"
+                  onClick={() => setModalIsOpen(false)}
+                >
+                  ✕
+                </button>
+                <ModalSignup />
+              </Modal>
+            </li>
+          </ul>
+        </div>
       </nav>
     </>
   );
