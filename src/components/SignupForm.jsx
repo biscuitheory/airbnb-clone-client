@@ -6,7 +6,7 @@ import useForm from './useForm';
 import validate from './ValidateSignup';
 
 const SignupForm = () => {
-  const { handleChange, handleSubmit, values, errors } = useForm(submit, validate);
+  const { handleInputChange, handleSubmit, values, errors } = useForm(submit, validate);
   const history = useHistory();
   async function submit() {
     try {
@@ -46,7 +46,7 @@ const SignupForm = () => {
                 name="role"
                 id="Host"
                 className="signup__input--host"
-                onChange={handleChange}
+                onChange={handleInputChange}
                 value="Host"
               />
             </label>
@@ -59,7 +59,7 @@ const SignupForm = () => {
                 name="role"
                 id="Tourist"
                 className="signup__input--tourist"
-                onChange={handleChange}
+                onChange={handleInputChange}
                 value="Tourist"
               />
             </label>
@@ -70,7 +70,7 @@ const SignupForm = () => {
             type="text"
             name="first_name"
             placeholder="Prénom"
-            onChange={handleChange}
+            onChange={handleInputChange}
             value={values.firstName}
             className="signup__input-firstname"
           />
@@ -78,7 +78,7 @@ const SignupForm = () => {
             type="text"
             name="last_name"
             placeholder="Nom"
-            onChange={handleChange}
+            onChange={handleInputChange}
             value={values.lastName}
             className="signup__input-lastname"
           />
@@ -92,7 +92,7 @@ const SignupForm = () => {
             type="email"
             name="email"
             placeholder="Adresse e-mail"
-            onChange={handleChange}
+            onChange={handleInputChange}
             value={values.email}
           />
           {errors.email && <p className="error">{errors.email}</p>}
@@ -103,7 +103,7 @@ const SignupForm = () => {
             type="password"
             name="password"
             placeholder="Mot de passe"
-            onChange={handleChange}
+            onChange={handleInputChange}
             value={values.password}
           />
           {errors.password && <p className="error">{errors.password}</p>}

@@ -17,12 +17,13 @@ const useForm = (cb, validate) => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
     setValues({
       ...values,
       [name]: value,
     });
+    console.log(value);
   };
 
   const handleSubmit = (e) => {
@@ -41,7 +42,7 @@ const useForm = (cb, validate) => {
   }, [errors]);
 
   return {
-    handleChange,
+    handleInputChange,
     handleSubmit,
     values,
     errors,
