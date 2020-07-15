@@ -1,0 +1,87 @@
+.signup {
+  border: 1px solid pink;
+
+  padding: 2em 1.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__form {
+    color: rgb(113, 113, 113);
+    // border: 1px solid green;
+    justify-content: space-evenly;
+  }
+
+  &__box-radios {
+    // border: 1px solid blue;
+    margin-top: 1em;
+    display: flex;
+    justify-content: flex-start;
+
+    div {
+      margin-right: 1em;
+
+      label {
+        display: flex;
+        align-items: center;
+
+        input {
+          margin: 1em;
+          height: 24px;
+          width: 24px;
+        }
+      }
+    }
+  }
+
+  &__input-name {
+    margin: 1em 0 1em 0;
+    display: flex;
+    flex-direction: column;
+
+    input {
+    }
+  }
+
+  &__input-firstname {
+    border-radius: 8px 8px 0px 0px;
+    border-bottom: 0px;
+  }
+
+  &__input-lastname {
+    border-radius: 0px 0px 8px 8px;
+  }
+
+  &__input-comment {
+    padding: 0.8em 0;
+    font-size: 0.75em;
+  }
+
+  &__input-boxes {
+    margin: 1em 0 1em 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__button {
+    margin: 1em 0 1em 0;
+    border-radius: 8px;
+    border: none;
+    height: 3em;
+    background: linear-gradient(to right, #e61e4d 0%, #e31c5f 50%, #d70466 100%);
+    color: #ffffff;
+    font-family: 'Airbnb-Cereal';
+    font-size: 1em;
+    font-weight: bold;
+    letter-spacing: 0.4px;
+  }
+
+  &__redirect {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 0.9em;
+    p {
+      margin-right: 0.8em;
+    }
+  }
+}

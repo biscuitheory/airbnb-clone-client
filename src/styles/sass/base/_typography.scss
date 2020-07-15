@@ -1,9 +1,21 @@
 body {
   font-family: 'Airbnb-Cereal';
-  font-size: 16px;
+  color: rgb(34, 34, 34);
+}
+
+h1 {
+  font-size: 22px;
+  letter-spacing: -0.6px;
+  line-height: 26px;
 }
 
 .error {
   color: rgb(193, 53, 21);
   font-size: 12px;
+}
+
+::placeholder {
+  color: #717171;
+  font-family: 'Airbnb-Cereal';
+  font-size: 16px;
 }

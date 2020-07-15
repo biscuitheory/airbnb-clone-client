@@ -1,21 +1,43 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
+
 import useForm from './useForm';
 import validate from './ValidateSignup';
 
 const SignupForm = () => {
   const { handleChange, handleSubmit, values, errors } = useForm(submit, validate);
-
-  function submit() {
-    console.log('Submitted Succesfully');
+  const history = useHistory();
+  async function submit() {
+    try {
+      const res = await axios.post('http://localhost:8080/api/signup', {
+        role: values.role,
+        first_name: values.first_name,
+        last_name: values.last_name,
+        email: values.email,
+        password: values.password,
+      });
+      if (res) {
+        console.log('Submitted Succesfully');
+        console.log('resultats', res);
+        history.push('/login');
+      }
+    } catch (err) {
+      console.log('err from signup', err);
+    }
   }
 
   return (
-    <div className="signup__container">
-      <h3>Effectuer mon inscription</h3>
-      <form onSubmit={handleSubmit} noValidate method="POST" action="/api/signup">
-        <div className="box-radios">
+    <div className="signup">
+      <h1>Effectuer mon inscription</h1>
+      <form
+        onSubmit={handleSubmit}
+        noValidate
+        method="POST"
+        action="/api/signup"
+        className="signup__form"
+      >
+        <div className="signup__box-radios">
           <div>
             <label htmlFor="Host">
               Hôte
@@ -25,7 +47,7 @@ const SignupForm = () => {
                 id="Host"
                 className="signup__input--host"
                 onChange={handleChange}
-                value={values.role}
+                value="Host"
               />
             </label>
           </div>
@@ -38,26 +60,34 @@ const SignupForm = () => {
                 id="Tourist"
                 className="signup__input--tourist"
                 onChange={handleChange}
-                value={values.role}
+                value="Tourist"
               />
             </label>
           </div>
         </div>
-        <input
-          type="text"
-          name="first_name"
-          placeholder="Prénom"
-          onChange={handleChange}
-          value={values.firstName}
-        />
-        <input
-          type="text"
-          name="last_name"
-          placeholder="Nom"
-          onChange={handleChange}
-          value={values.lastName}
-        />
-        <div>
+        <div className="signup__input-name">
+          <input
+            type="text"
+            name="first_name"
+            placeholder="Prénom"
+            onChange={handleChange}
+            value={values.firstName}
+            className="signup__input-firstname"
+          />
+          <input
+            type="text"
+            name="last_name"
+            placeholder="Nom"
+            onChange={handleChange}
+            value={values.lastName}
+            className="signup__input-lastname"
+          />
+          <p className="signup__input-comment">
+            Assurez-vous qu'il correspond au nom figurant sur votre pièce d'identité.
+          </p>
+          {errors.first_name && <p className="error">{errors.first_name}</p>}
+        </div>
+        <div className="signup__input-boxes">
           <input
             type="email"
             name="email"
@@ -66,8 +96,9 @@ const SignupForm = () => {
             value={values.email}
           />
           {errors.email && <p className="error">{errors.email}</p>}
-        </div>
-        <div>
+          <p className="signup__input-comment">
+            Nous vous enverrons les confirmations et les reçus de voyage par e-mail.
+          </p>
           <input
             type="password"
             name="password"
@@ -76,12 +107,12 @@ const SignupForm = () => {
             value={values.password}
           />
           {errors.password && <p className="error">{errors.password}</p>}
+          <button onClick={submit} type="submit" className="signup__button">
+            S'inscrire
+          </button>
         </div>
-        <button type="submit" className="signup__button">
-          S'inscrire
-        </button>
       </form>
-      <div>
+      <div className="signup__redirect">
         <p>Vous avez déjà un compte ?</p>
         <Link to="/login">Se connecter</Link>
       </div>

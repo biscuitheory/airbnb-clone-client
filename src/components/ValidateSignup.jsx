@@ -1,5 +1,10 @@
 export default function validateSignup(values) {
-  let errors = {};
+  const errors = {};
+  if (!values.first_name) {
+    errors.first_name = 'Un prénom est obligatoire.';
+  } else if (typeof values.first_name !== 'string') {
+    errors.first_name = 'Veuillez utiliser des caractères valides pour saisir votre prénom.';
+  }
   if (!values.email) {
   } else if (!/\S+@\S+\.\S+/.test(values.email)) {
     errors.email = 'Une adresse e-mail est obligatoire.';

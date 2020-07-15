@@ -1,15 +1,48 @@
-.header {
-  width: 100%;
-  background-color: #ffffff;
-  display: none;
-  justify-content: space-around;
-  &__container-logo {
-    display: none;
+@import './styles/sass/layout/nav';
+
+.breakpoint__medium-only {
+  width: 100vw;
+  // border: 1px solid orange;
+
+  .header {
+    width: 100vw;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    // border: 1px solid red;
+
+    &__container-logo {
+      padding: 1.5rem 2rem;
+      // border: 1px solid purple;
+    }
 
     &__logo {
-      background-color: #fa6f84;
-      max-width: 5rem;
+      max-width: 2.2rem;
       height: auto;
+    }
+
+    &__logofull {
+      max-width: 5vw;
+      height: auto;
+    }
+  }
+}
+
+.breakpoint__large-up {
+  width: 100vw;
+  .header {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    background-color: #ffffff;
+    // border: 1px solid red;
+
+    .header__container-logo {
+      // border: 1px solid green;
+      width: 8vw;
+      margin: 1em 2em;
     }
   }
 }

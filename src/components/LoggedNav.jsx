@@ -5,7 +5,7 @@ import { ReactComponent as Enregistres } from '../assets/images/icons/enregistre
 import { ReactComponent as Voyages } from '../assets/images/icons/voyages.svg';
 import { ReactComponent as Messages } from '../assets/images/icons/messages.svg';
 
-function Nav() {
+function LoggedNav() {
   return (
     <nav className="nav">
       <div className="nav__links">
