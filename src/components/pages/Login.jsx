@@ -47,11 +47,12 @@ export const Login = () => {
         });
       }
       throw res;
-    } catch (res) {
+    } catch (error) {
+      console.log(data);
       return setData({
         ...data,
         isSubmitting: false,
-        errorMessage: res.message,
+        errorMessage: error.message,
       });
     }
   };

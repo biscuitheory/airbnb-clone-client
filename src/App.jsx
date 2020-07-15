@@ -60,7 +60,7 @@ function App() {
           <Header />
           <Router>
             <>
-              <BottomNav state={state} />
+              <BottomNav />
               <Switch>
                 <Route exact path="/" component={Places} />
                 <Route exact path="/rooms/:id" component={Place} />

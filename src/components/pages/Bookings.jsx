@@ -11,7 +11,6 @@ const Bookings = () => {
   const [bookings, setBookings] = useState([]);
 
   useEffect(() => {
-    console.log(authState);
     const fetchBookings = async () => {
       const getBookings = await axios('http://localhost:8080/api/bookings', {
         headers: { Authorization: `Bearer ${authState.token}` },

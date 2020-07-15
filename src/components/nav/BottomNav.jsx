@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Breakpoint } from 'react-socks';
 
 import LoggedBottomNav from './LoggedBottomNav';
 import GuestBottomNav from './GuestBottomNav';
 
-const BottomNav = (props) => {
-  console.log('props : ', props.state.isAuthenticated);
+import { AuthContext } from '../../context/auth';
 
-  if (props.state.isAuthenticated) {
+const BottomNav = () => {
+  const { state: authState } = useContext(AuthContext);
+
+  if (authState.isAuthenticated) {
     return (
       <>
         <nav className="nav-wrapper">
