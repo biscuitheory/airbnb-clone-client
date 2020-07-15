@@ -13,15 +13,34 @@
     padding: 0.5rem 1rem;
     text-decoration: none;
     color: #484848;
+    cursor: pointer;
     &:hover,
+    &:focus,
     &:active {
-      color: #ff627a;
+      color: #ff5a5f;
     }
     &__icon {
       width: 1.5rem !important;
       &:hover,
+      &:focus,
       &:active {
-        color: #ff627a;
+        color: #ff5a5f;
+        border-color: #ff5a5f;
+      }
+      &__profil {
+        border-radius: 50%;
+        height: 1.5rem;
+        width: 1.5rem;
+        &:hover,
+        &:focus,
+        &:active {
+          color: #ff5a5f;
+          height: 1.5rem;
+          width: 1.5rem;
+          border-width: 1px;
+          border-style: solid;
+          border-color: #ff5a5f;
+        }
       }
     }
   }
