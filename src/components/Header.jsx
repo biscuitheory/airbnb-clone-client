@@ -12,7 +12,9 @@ function Header() {
       <Breakpoint medium only>
         <header className="header">
           <div className="header__container-logo">
-            <img className="header__logo" src={logoSimple} alt="logo simple airbnb" />
+            <a href="/">
+              <img className="header__logo" src={logoSimple} alt="logo simple airbnb" />
+            </a>
           </div>
           <TopNavbar />
         </header>
@@ -20,7 +22,9 @@ function Header() {
       <Breakpoint large up>
         <header className="header">
           <div className="header__container-logo">
-            <img className="header__logofull" src={logoFull} alt="logo complet airbnb" />
+            <a href="/">
+              <img className="header__logofull" src={logoFull} alt="logo complet airbnb" />
+            </a>
           </div>
           <TopNavbar />
         </header>
