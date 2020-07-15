@@ -4,7 +4,7 @@ import { Breakpoint } from 'react-socks';
 import LoggedBottomNav from './LoggedBottomNav';
 import GuestBottomNav from './GuestBottomNav';
 
-const Nav = (props) => {
+const BottomNav = (props) => {
   console.log('props : ', props.state.isAuthenticated);
 
   if (props.state.isAuthenticated) {
@@ -31,4 +31,4 @@ const Nav = (props) => {
   );
 };
 
-export default Nav;
+export default BottomNav;

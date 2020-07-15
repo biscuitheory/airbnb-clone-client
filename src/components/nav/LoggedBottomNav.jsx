@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { ReactComponent as ExplorerIcon } from '../assets/images/icons/explorer.svg';
-import { ReactComponent as EnregistresIcon } from '../assets/images/icons/enregistres.svg';
-import { ReactComponent as VoyagesIcon } from '../assets/images/icons/voyages.svg';
-import { ReactComponent as MessagesIcon } from '../assets/images/icons/messages.svg';
+import { ReactComponent as ExplorerIcon } from '../../assets/images/icons/explorer.svg';
+import { ReactComponent as EnregistresIcon } from '../../assets/images/icons/enregistres.svg';
+import { ReactComponent as VoyagesIcon } from '../../assets/images/icons/voyages.svg';
+import { ReactComponent as MessagesIcon } from '../../assets/images/icons/messages.svg';
 
 function LoggedBottomNav() {
   return (

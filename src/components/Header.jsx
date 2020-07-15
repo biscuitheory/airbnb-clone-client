@@ -3,7 +3,7 @@ import { Breakpoint } from 'react-socks';
 
 import logoSimple from '../assets/images/logo_simple.png';
 import logoFull from '../assets/images/Airbnb_Logo.svg';
-import TopNavbar from './TopNavbar';
+import TopNavbar from './nav/TopNavbar';
 
 function Header() {
   return (

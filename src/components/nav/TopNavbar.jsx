@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Modal from 'react-modal';
 
-import ModalSignup from './ModalSignup';
-import worldIcon from '../assets/images/icons/globe.svg';
-import unrollIcon from '../assets/images/icons/unroll.svg';
-import listIcon from '../assets/images/icons/list.svg';
-import userIcon from '../assets/images/icons/user.svg';
+import ModalSignup from '../ModalSignup';
+import worldIcon from '../../assets/images/icons/globe.svg';
+import unrollIcon from '../../assets/images/icons/unroll.svg';
+import listIcon from '../../assets/images/icons/list.svg';
+import userIcon from '../../assets/images/icons/user.svg';
 
 Modal.setAppElement('#root');
 

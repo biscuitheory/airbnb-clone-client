@@ -5,7 +5,7 @@ import { AuthContext } from './context/auth';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Nav from './components/Nav';
+import BottomNav from './components/nav/BottomNav';
 
 import Places from './components/pages/Places';
 import Place from './components/pages/Place';
@@ -60,7 +60,7 @@ function App() {
           <Header />
           <Router>
             <>
-              <Nav state={state} />
+              <BottomNav state={state} />
               <Switch>
                 <Route exact path="/" component={Places} />
                 <Route exact path="/rooms/:id" component={Place} />
