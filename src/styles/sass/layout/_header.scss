@@ -17,8 +17,11 @@
 
     &__logo {
       max-width: 2.2rem;
-     
     }
+  }
+
+  .main__padding {
+    padding-top: 100px;
   }
 }
 
@@ -37,5 +40,9 @@
       width: 120px;
       margin: 3vh 5vw;
     }
+  }
+
+  .main__padding {
+    padding-top: 100px;
   }
 }

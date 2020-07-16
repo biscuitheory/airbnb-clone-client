@@ -34,7 +34,7 @@ const SignupForm = () => {
         onSubmit={handleSubmit}
         noValidate
         method="POST"
-        action="/api/signup"
+        action="http://localhost:8080/api/signup"
         className="signup__form"
       >
         <div className="signup__box-radios">
@@ -107,7 +107,7 @@ const SignupForm = () => {
             value={values.password}
           />
           {errors.password && <p className="error">{errors.password}</p>}
-          <button onClick={submit} type="submit" className="signup__button">
+          <button type="submit" className="signup__button">
             S'inscrire
           </button>
         </div>

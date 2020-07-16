@@ -1,6 +1,31 @@
-.places {
-  display: flex;
-  flex-wrap: wrap;
+.breakpoint__small-down {
+  .places {
+    display: grid;
+    grid-template-columns: repeat(1, auto [col-start]);
+    row-gap: 2em;
+    padding: 5vh 8vw;
+    // position: relative;
+  }
+}
+
+.breakpoint__medium-only {
+  .places {
+    display: grid;
+    grid-template-columns: repeat(2, auto [col-start]);
+    column-gap: 1em;
+    row-gap: 2em;
+    padding: 1vh 3vw;
+  }
+}
+
+.breakpoint__large-up {
+  .places {
+    display: grid;
+    grid-template-columns: repeat(5, auto [col-start]);
+    column-gap: 1em;
+    row-gap: 2em;
+    padding: 1vh 5vw;
+  }
 }
 
 .place {

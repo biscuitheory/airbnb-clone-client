@@ -18,6 +18,7 @@ function Header() {
           </div>
           <TopNavbar />
         </header>
+        <div className="main__padding" />
       </Breakpoint>
       <Breakpoint large up>
         <header className="header">
@@ -28,6 +29,7 @@ function Header() {
           </div>
           <TopNavbar />
         </header>
+        <div className="main__padding" />
       </Breakpoint>
     </>
   );

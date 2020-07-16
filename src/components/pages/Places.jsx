@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Breakpoint } from 'react-socks';
 
 import PlaceItem from '../PlaceItem';
 
@@ -16,11 +17,27 @@ const Home = () => {
   }, []);
   return (
     <>
-      <div className="places">
-        {places.map((place) => (
-          <PlaceItem key={place.id} place={place} />
-        ))}
-      </div>
+      <Breakpoint small down>
+        <div className="places">
+          {places.map((place) => (
+            <PlaceItem key={place.id} place={place} />
+          ))}
+        </div>
+      </Breakpoint>
+      <Breakpoint medium only>
+        <div className="places">
+          {places.map((place) => (
+            <PlaceItem key={place.id} place={place} />
+          ))}
+        </div>
+      </Breakpoint>
+      <Breakpoint large up>
+        <div className="places">
+          {places.map((place) => (
+            <PlaceItem key={place.id} place={place} />
+          ))}
+        </div>
+      </Breakpoint>
     </>
   );
 };

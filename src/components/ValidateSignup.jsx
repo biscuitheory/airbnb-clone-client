@@ -6,6 +6,7 @@ export default function validateSignup(values) {
     errors.first_name = 'Veuillez utiliser des caractères valides pour saisir votre prénom.';
   }
   if (!values.email) {
+    errors.email = 'Une adresse e-mail est obligatoire.';
   } else if (!/\S+@\S+\.\S+/.test(values.email)) {
     errors.email = 'Une adresse e-mail est obligatoire.';
   }
