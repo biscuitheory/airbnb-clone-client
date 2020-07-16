@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
+import { Link } from 'react-router-dom';
 
 import ModalSignup from '../ModalSignup';
 import ModalLogin from '../ModalLogin';

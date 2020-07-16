@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Breakpoint } from 'react-socks';
 
-import { AuthContext } from '../context/auth';
+import { AuthContext } from '../../context/auth';
 
 import LoggedBottomNav from './LoggedBottomNav';
 import GuestBottomNav from './GuestBottomNav';
