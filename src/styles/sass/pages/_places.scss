@@ -1,4 +1,18 @@
+.places__intro {
+  padding: 0 4vw 4vh;
+
+  h1 {
+    font-size: 1.8em;
+    font-weight: bold;
+    padding-bottom: 3vh;
+  }
+}
+
 .breakpoint__small-down {
+  .places__intro {
+    padding: 5vh 10vw 0;
+  }
+  
   .places {
     display: grid;
     grid-template-columns: repeat(1, auto [col-start]);
@@ -21,16 +35,17 @@
 .breakpoint__large-up {
   .places {
     display: grid;
-    grid-template-columns: repeat(5, auto [col-start]);
+    grid-template-columns: repeat(5, 17.5vw [col-start]);
     column-gap: 1em;
     row-gap: 2em;
-    padding: 1vh 5vw;
+    padding: 1vh 4vw;
   }
 }
 
 .place {
+  height: 100%;
   &__image {
-    width: 100%;
+    max-width: 100%;
     border-radius: 5%;
   }
 
@@ -38,7 +53,17 @@
     color: black;
   }
 
-  &__price {
+  &__moreinfos {
+    font-size: 0.95em;
+  }
+
+  &__price-night {
     color: black;
+    font-weight: bold;
+  }
+
+  &__price-month {
+    color: #717171;
+    font-size: 0.9em;
   }
 }

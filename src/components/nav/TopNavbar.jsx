@@ -9,6 +9,18 @@ import unrollIcon from '../../assets/images/icons/unroll.svg';
 import listIcon from '../../assets/images/icons/list.svg';
 import userIcon from '../../assets/images/icons/user.svg';
 
+const customStyles = {
+  content: {
+    width: '550px',
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+  },
+};
+
 Modal.setAppElement('#root');
 
 function TopNavbar() {
@@ -78,7 +90,11 @@ function TopNavbar() {
                   <strong>Inscription</strong>
                 </span>
               </Link>
-              <Modal isOpen={signupModalIsOpen} onRequestClose={() => setSignupModalIsOpen(false)}>
+              <Modal
+                isOpen={modalIsOpen}
+                onRequestClose={() => setModalIsOpen(false)}
+                style={customStyles}
+              >
                 <button
                   type="button"
                   className="crossbtn"
