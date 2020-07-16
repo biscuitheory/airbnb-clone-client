@@ -16,6 +16,7 @@ import Login from './components/pages/Login';
 import Enregistres from './components/pages/Enregistres';
 import Messages from './components/pages/Messages';
 import Profil from './components/pages/Profil';
+import Reserver from './components/pages/Reserver';
 
 import './App.scss';
 
@@ -64,13 +65,14 @@ function App() {
               <Switch>
                 <Route exact path="/" component={Places} />
                 <Route exact path="/rooms/:id" component={Place} />
-                <Route exact path="/bookings" component={Bookings} />
+                <Route state={state} exact path="/bookings" component={Bookings} />
                 <Route exact path="/rooms/:id/booking" component={Booking} />
                 <Route exact path="/signup" component={Signup} />
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/wishlists" component={Enregistres} />
                 <Route exact path="/inbox" component={Messages} />
                 <Route exact path="/account-settings" component={Profil} />
+                <Route exact path="/rooms/:id/reserver" component={Reserver} />
               </Switch>
             </>
           </Router>
