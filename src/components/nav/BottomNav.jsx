@@ -6,7 +6,7 @@ import { AuthContext } from '../context/auth';
 import LoggedBottomNav from './LoggedBottomNav';
 import GuestBottomNav from './GuestBottomNav';
 
-const Nav = () => {
+const BottomNav = () => {
   const { state: authState } = useContext(AuthContext);
 
   if (authState.isAuthenticated) {
@@ -33,4 +33,4 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+export default BottomNav;

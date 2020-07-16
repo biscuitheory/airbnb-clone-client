@@ -19,7 +19,7 @@ const Bookings = () => {
       setBookings(getBookings.data);
     };
     fetchBookings();
-  }, []);
+  }, [authState]);
   return (
     <>
       <div className="bookings">

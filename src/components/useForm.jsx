@@ -1,50 +1,54 @@
 import { useState, useEffect } from 'react';
 
 const useForm = (cb, validate) => {
-  const [values, setValues] = useState({
+  const initialState = {
     role: '',
     first_name: '',
     last_name: '',
     email: '',
     password: '',
-  });
-  const [errors, setErrors] = useState({
-    role: '',
-    first_name: '',
-    last_name: '',
-    email: '',
-    password: '',
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
+    isSubmitting: false,
+    errorMessage: null,
+  };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setValues({
-      ...values,
+  const [data, setData] = useState(initialState);
+  const [errors, setErrors] = useState({});
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setData({
+      ...data,
       [name]: value,
     });
   };
 
-  const handleSubmit = (e) => {
-    console.log('form', values);
-    e.preventDefault();
-    //handling err}
-    setErrors(validate(values));
-    setIsSubmitting(true);
-    // cb();
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    setData({
+      ...data,
+      isSubmitting: true,
+      errorMessage: null,
+    });
+    setErrors(validate(data));
   };
 
   useEffect(() => {
-    if (Object.keys(errors).length === 0 && isSubmitting) {
+    if (Object.keys(errors).length === 0 && data.isSubmitting) {
       cb();
+    } else {
+      setData({
+        ...data,
+        isSubmitting: false,
+      });
     }
   }, [errors]);
 
   return {
-    handleChange,
-    handleSubmit,
-    values,
+    handleInputChange,
+    handleFormSubmit,
+    data,
     errors,
+    setData,
   };
 };
 
