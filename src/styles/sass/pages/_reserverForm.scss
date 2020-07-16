@@ -1,0 +1,30 @@
+.reserver {
+  padding: 1.5rem;
+  &__croix {
+    margin: 2rem 0;
+    width: 2rem;
+    height: 2rem;
+  }
+  &__input {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border: 1px solid silver;
+    border-radius: 0.5rem;
+    &__item {
+      &__check-in {
+        border-right: 1px solid silver;
+        grid-column: 1 / 2;
+        grid-row: 1;
+      }
+      &__check-out {
+        grid-column: 2 / 3;
+        grid-row: 1;
+      }
+      &__numVoyageurs {
+        border-top: 1px solid silver;
+        grid-column-start: 1;
+        grid-column-end: 3;
+      }
+    }
+  }
+}
