@@ -18,8 +18,6 @@ const SignupForm = () => {
         password: data.password,
       });
       if (res) {
-        console.log('Submitted Succesfully');
-        console.log('resultats', res);
         history.push('/login');
       }
     } catch (err) {
