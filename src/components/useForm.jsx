@@ -35,6 +35,11 @@ const useForm = (cb, validate) => {
   useEffect(() => {
     if (Object.keys(errors).length === 0 && data.isSubmitting) {
       cb();
+    } else {
+      setData({
+        ...data,
+        isSubmitting: false,
+      });
     }
   }, [errors]);
 

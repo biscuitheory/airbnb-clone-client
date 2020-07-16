@@ -1,4 +1,16 @@
 .login {
+  height: 100vh;
+  color: #484848;
+
+  &__container {
+    border: 1px solid rgb(228, 228, 228);
+    margin: 24px;
+  }
+  &__title {
+    text-align: center;
+    margin-top: 24px;
+  }
+
   &__form {
     padding: 20px;
   }
@@ -6,7 +18,7 @@
   &__redirection {
     display: flex;
     justify-content: space-evenly;
-    padding: 20px;
+    padding-bottom: 20px;
 
     .redirection__button {
       color: #ff5a5f;
@@ -21,14 +33,17 @@
 .form {
   &__submit {
     width: 100%;
+    margin-top: 16px;
+    margin-bottom: 24px;
     border: 1px solid #ff5a5f;
-    border-radius: 4px;
-    background-color: #ff5a5f;
+    border-radius: 8px;
+    background: linear-gradient(to right, #e61e4d 0%, #e31c5f 50%, #d70466 100%);
     color: #ffffff;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 27px;
-    padding-right: 27px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-left: 24px;
+    padding-right: 24px;
+    font-size: 16px;
     cursor: pointer;
   }
 
