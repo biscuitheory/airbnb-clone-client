@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import Modal from 'react-modal';
 
 import ModalSignup from '../ModalSignup';
+import ModalLogin from '../ModalLogin';
 import worldIcon from '../../assets/images/icons/globe.svg';
 import unrollIcon from '../../assets/images/icons/unroll.svg';
 import listIcon from '../../assets/images/icons/list.svg';
@@ -54,11 +54,9 @@ function TopNavbar() {
                 <a href="#">Connexion</a>
               </li>
               <li>
-                <Link className="topnav__link" onClick={() => setModalIsOpen(true)}>
-                  <span>
-                    <strong>Inscription</strong>
-                  </span>
-                </Link>
+                <span className="topnav__link" onClick={() => setModalIsOpen(true)}>
+                  <strong>Inscription</strong>
+                </span>
                 <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}>
                   <button
                     type="button"

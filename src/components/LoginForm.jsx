@@ -24,10 +24,11 @@ const LoginForm = () => {
           payload: res,
         });
         history.push('/');
+        return;
       }
       throw res;
     } catch (error) {
-      return setData({
+      setData({
         ...data,
         isSubmitting: false,
         errorMessage: error.message,
@@ -48,7 +49,7 @@ const LoginForm = () => {
               name="email"
               id="email"
               placeholder="E-mail"
-              className="form__input"
+              className="form__input-email"
             />
           </label>
           {errors.email && <p className="form__error">{errors.email}</p>}
@@ -61,7 +62,7 @@ const LoginForm = () => {
               name="password"
               id="password"
               placeholder="Mot de passe"
-              className="form__input"
+              className="form__input-password"
             />
           </label>
 
