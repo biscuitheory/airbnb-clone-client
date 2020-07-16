@@ -13,7 +13,7 @@ const Booking = () => {
 
   useEffect(() => {
     const fetchBookings = async () => {
-      const res = await axios('/api/bookings');
+      const res = await axios('http://localhost:8080/api/bookings');
 
       setBooking(res.data);
     };
