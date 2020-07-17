@@ -29,7 +29,11 @@ const Bookings = () => {
           {bookings.map((booking) => (
             <div key={booking.id}>
               <div className="bookings__booking">
-                <img className="bookings__booking__image" src={photoPlace} alt="appartement" />
+                <img
+                  className="bookings__booking__image"
+                  src={booking.Place.image}
+                  alt="appartement"
+                />
                 <div className="bookings__booking__info">
                   <div className="bookings__booking__info__text-color">
                     <span>
@@ -45,7 +49,7 @@ const Bookings = () => {
                     <div className="bookings__booking__info__info-link__left">
                       <img
                         className="bookings__booking__info__info-link__left__image-small"
-                        src={photoPlace}
+                        src={booking.Place.image}
                         alt="appartement"
                       />
                       <p className="bookings__booking__info__info-link__left__name">
