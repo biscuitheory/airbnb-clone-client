@@ -1,10 +1,26 @@
 import React, { useState, useEffect, useContext } from 'react';
+import Modal from 'react-modal';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { Breakpoint } from 'react-socks';
 import { AuthContext } from '../../context/auth';
 
+import Reserver from './Reserver';
 import photoPlace from '../../assets/images/photoPlace.jpg';
+
+const customStyles = {
+  content: {
+    width: '550px',
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+  },
+};
+
+Modal.setAppElement('#root');
 
 const Place = () => {
   const { state: authState } = useContext(AuthContext);
@@ -14,6 +30,8 @@ const Place = () => {
   const [place, setPlace] = useState('');
 
   const { name, city, max_guests, rooms, bathrooms, price_by_night: priceByNight } = place;
+
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   useEffect(() => {
     const fetchPlace = async () => {
@@ -51,7 +69,7 @@ const Place = () => {
             </div>
           </div>
           <div className="place__container-book">
-            <Link to="/login">
+            <Link to="/rooms/:id/reserver">
               <button type="button" className="place__container-book-button">
                 Réserver
               </button>
@@ -75,11 +93,20 @@ const Place = () => {
               <p className="place__container-info-more">
                 C&apos;est une perle rare. Les réservations sont fréquentes !
               </p>
-              <Link to="/login">
-                <button type="button" className="place__container-book-button">
-                  Réserver
-                </button>
-              </Link>
+              <button
+                type="button"
+                onClick={() => setModalIsOpen(true)}
+                className="place__container-book-button"
+              >
+                Réserver
+              </button>
+              <Modal
+                isOpen={modalIsOpen}
+                onRequestClose={() => setModalIsOpen(false)}
+                style={customStyles}
+              >
+                <Reserver />
+              </Modal>
             </div>
           </div>
         </Breakpoint>
