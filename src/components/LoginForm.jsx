@@ -8,7 +8,22 @@ import validate from './ValidateLogin';
 
 const LoginForm = () => {
   const { dispatch } = useContext(AuthContext);
-  const { handleInputChange, handleFormSubmit, data, setData, errors } = useForm(submit, validate);
+
+  const initialState = {
+    // role: '',
+    // first_name: '',
+    // last_name: '',
+    email: '',
+    password: '',
+    isSubmitting: false,
+    errorMessage: null,
+  };
+
+  const { handleInputChange, handleFormSubmit, data, setData, errors } = useForm(
+    initialState,
+    submit,
+    validate
+  );
   const history = useHistory();
 
   async function submit() {

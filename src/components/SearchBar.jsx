@@ -12,9 +12,12 @@ function SearchBar() {
 
   async function submit() {
     try {
-      const res = await axios.post('http://localhost:8080/api/', {
+      const res = await axios.post(`http://localhost:8080/api/places?city=${data.city}`, {
         city: data.city,
       });
+      if (res.status === 200) {
+        dispatch({});
+      }
     } catch (error) {}
   }
 
@@ -30,6 +33,33 @@ function SearchBar() {
             id="city"
             placeholder="Où allez-vous ?"
             className="form__input-city"
+          />
+        </label>
+        <label htmlFor="check_in">
+          <input
+            type="date"
+            name="check_in"
+            id="checkIn"
+            placeholder="Ajoutez des dates"
+            className="form__input-checkin"
+          />
+        </label>
+        <label htmlFor="check_out">
+          <input
+            type="date"
+            name="check_out"
+            id="checkOut"
+            placeholder="Ajoutez des dates"
+            className="form__input-checkout"
+          />
+        </label>
+        <label htmlFor="travellers">
+          <input
+            type="number"
+            name="travellers"
+            id="travellers"
+            placeholder="Ajoutez des voyageurs"
+            className="form__input-travellers"
           />
         </label>
       </form>

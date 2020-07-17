@@ -1,16 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const useForm = (cb, validate) => {
-  const initialState = {
-    role: '',
-    first_name: '',
-    last_name: '',
-    email: '',
-    password: '',
-    isSubmitting: false,
-    errorMessage: null,
-  };
-
+const useForm = (initialState, cb, validate) => {
   const [data, setData] = useState(initialState);
   const [errors, setErrors] = useState({});
 
