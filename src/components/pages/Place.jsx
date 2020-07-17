@@ -6,7 +6,6 @@ import { Breakpoint } from 'react-socks';
 import { AuthContext } from '../../context/auth';
 
 import Reserver from './Reserver';
-import photoPlace from '../../assets/images/photoPlace.jpg';
 
 const customStyles = {
   content: {
@@ -29,7 +28,7 @@ const Place = () => {
 
   const [place, setPlace] = useState('');
 
-  const { name, city, max_guests, rooms, bathrooms, price_by_night: priceByNight } = place;
+  const { name, city, max_guests, rooms, bathrooms, price_by_night: priceByNight, image } = place;
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
@@ -53,7 +52,7 @@ const Place = () => {
           </div>
           <div className="place__container">
             <div className="place__container-images">
-              <img className="place__container-image" src={photoPlace} alt="appartement" />
+              <img className="place__container-image" src={image} alt="appartement" />
             </div>
             <div className="place__container-info">
               <h1>{name}</h1>
@@ -79,7 +78,7 @@ const Place = () => {
         <Breakpoint medium up>
           <div className="place__container">
             <div className="place__container-images">
-              <img className="place__container-image" src={photoPlace} alt="appartement" />
+              <img className="place__container-image" src={image} alt="appartement" />
             </div>
             <div className="place__container-info">
               <h1>{name}</h1>
@@ -124,7 +123,7 @@ const Place = () => {
         </div>
         <div className="place__container">
           <div className="place__container-images">
-            <img className="place__container-image" src={photoPlace} alt="appartement" />
+            <img className="place__container-image" src={image} alt="appartement" />
           </div>
           <div className="place__container-info">
             <h1>{name}</h1>
@@ -150,7 +149,7 @@ const Place = () => {
       <Breakpoint medium up>
         <div className="place__container">
           <div className="place__container-images">
-            <img className="place__container-image" src={photoPlace} alt="appartement" />
+            <img className="place__container-image" src={image} alt="appartement" />
           </div>
           <div className="place__container-info">
             <h1>{name}</h1>
