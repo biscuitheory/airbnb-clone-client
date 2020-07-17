@@ -1,7 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
+
 import { AuthContext } from '../../context/auth';
+
+import { ReactComponent as GoBackArrow } from '../../assets/images/icons/arrow.svg';
 
 const Place = () => {
   const { state: authState } = useContext(AuthContext);
