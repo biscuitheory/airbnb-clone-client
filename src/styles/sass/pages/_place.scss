@@ -1,0 +1,20 @@
+.breakpoint__small-down {
+  .place__header {
+    width: 100vw;
+    height: 8vh;
+    padding: 1em 2em;
+    font-size: 0.85em;
+  }
+}
+
+.breakpoint__large-up {
+  .place__container {
+    padding: 0 4vw 4vh;
+
+    h1 {
+      font-size: 1.8em;
+      font-weight: bold;
+      padding-bottom: 3vh;
+    }
+  }
+}

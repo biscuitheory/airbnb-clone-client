@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { useHistory } from 'react-router-dom';
+
+import { AuthContext } from '../../context/auth';
 
 import worldIcon from '../../assets/images/icons/globe.svg';
 import unrollIcon from '../../assets/images/icons/unroll.svg';
 import listIcon from '../../assets/images/icons/list.svg';
-import userIcon from '../../assets/images/icons/user.svg';
 
 function LoggedTopNav() {
+  const { dispatch } = useContext(AuthContext);
+  const history = useHistory();
+  const logOut = async (event) => {
+    event.preventDefault();
+    dispatch({
+      type: 'LOGOUT',
+    });
+    history.push('/');
+  };
   return (
     <nav className="topnav">
       <div className="topnav__dropdownone">
@@ -44,7 +55,7 @@ function LoggedTopNav() {
         <button type="button" className="topnav__dropdowntwo-button">
           <img className="topnav__dropdowntwo-button-iconone" src={listIcon} alt="icône liste" />
           <img
-            className="nav__link__icon__profil"
+            className="topnav__dropdowntwo-button-icontwolog"
             src="https://pngimage.net/wp-content/uploads/2018/06/react-icon-png-7.png"
             alt="utilisateur connecté"
           />
@@ -64,6 +75,9 @@ function LoggedTopNav() {
           </li>
           <li className="topnav__dropdowntwo-item">
             <a href="/account-settings">Profil</a>
+          </li>
+          <li className="topnav__dropdowntwo-item">
+            <a href="/login" onClick={logOut}>Déconnexion</a>
           </li>
         </ul>
       </div>

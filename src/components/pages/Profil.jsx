@@ -1,13 +1,17 @@
 import React, { useContext } from 'react';
+import { useHistory } from 'react-router-dom';
+
 import { AuthContext } from '../../context/auth';
 
 function Profil() {
   const { dispatch } = useContext(AuthContext);
+  const history = useHistory();
   const logOut = async (event) => {
     event.preventDefault();
-    return dispatch({
+    dispatch({
       type: 'LOGOUT',
     });
+    history.push('/');
   };
   return (
     <div>
