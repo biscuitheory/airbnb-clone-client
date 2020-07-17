@@ -7,6 +7,7 @@
   }
 
   .place__container {
+    padding: 0 4vw 4vh 0;
     &-image {
       width: 100vw;
     }
@@ -53,14 +54,13 @@
 
 .breakpoint__medium-up {
   .place__container {
-    padding: 0 4vw 4vh;
-
+    padding: 0 4vw 0;
+    width: 100vw; 
     &-images {
-      width: 95vw;
+      width: 50vw;
     }
-
     &-image {
-      width: 95vw;
+      width: 100%;
     }
 
     &-info {
@@ -85,7 +85,8 @@
     &-book {
       display: flex;
       justify-content: flex-start;
-      padding: 0 0 2em 5em;
+      padding: 0 0 2em 3.5em;
+
       &-button {
         margin: 1em 0 1em 0;
         border-radius: 8px;
