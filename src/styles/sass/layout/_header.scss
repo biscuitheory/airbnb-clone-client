@@ -1,15 +1,22 @@
-@import './styles/sass/layout/nav';
-
-.breakpoint__medium-only {
+.breakpoint__medium-only,
+.breakpoint__large-up {
   width: 100vw;
-  // border: 1px solid orange;
 
-  .header {
+  & .header {
     width: 100vw;
     background-color: #ffffff;
     display: flex;
-    justify-content: space-between;
     position: fixed;
+  }
+
+  & .main__padding {
+    padding-top: 100px;
+  }
+}
+
+.breakpoint__medium-only {
+  & .header {
+    justify-content: space-between;
 
     &__container-logo {
       padding: 1.5rem 2rem;
@@ -19,20 +26,11 @@
       max-width: 2.2rem;
     }
   }
-
-  .main__padding {
-    padding-top: 100px;
-  }
 }
 
 .breakpoint__large-up {
-  width: 100vw;
   .header {
-    width: 100vw;
-    display: flex;
     flex-direction: row;
-    position: fixed;
-    background-color: #ffffff;
     // border: 1px solid red;
 
     &__container-logo {
@@ -40,9 +38,5 @@
       width: 120px;
       margin: 3vh 5vw;
     }
-  }
-
-  .main__padding {
-    padding-top: 100px;
   }
 }

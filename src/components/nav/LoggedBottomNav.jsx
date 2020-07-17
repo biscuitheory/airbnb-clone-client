@@ -18,7 +18,7 @@ function LoggedBottomNav() {
       <Link className="nav__link" to="/wishlists">
         <EnregistresIcon className="nav__link__icon" />
         <span>
-          <strong>Enregistres</strong>
+          <strong>Enregistrés</strong>
         </span>
       </Link>
       <Link className="nav__link" to="/bookings">

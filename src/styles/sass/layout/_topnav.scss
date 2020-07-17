@@ -2,7 +2,7 @@
 .breakpoint__large-up {
   .topnav {
     width: 92vw;
-    padding: 0 5vw;
+    padding: 0 4vw;
     display: flex;
     justify-content: flex-end;
 
@@ -33,10 +33,18 @@
           background-color: #f7f7f7;
         }
 
-        &:focus + .topnav__dropdownone-list {
+        & + .topnav__dropdownone-list {
           opacity: 1;
           pointer-events: all;
-          outline: none;
+          visibility: hidden;
+          transition: all 0s ease 1s;
+        }
+
+        &:hover + .topnav__dropdownone-list {
+          opacity: 1;
+          pointer-events: all;
+          transition-delay: 0s;
+          visibility: visible;
         }
 
         &-iconone {
@@ -53,7 +61,7 @@
         position: relative;
         background-color: #ffffff;
         width: 150px;
-        height: 20vh;
+        height: 13em;
         display: flex;
         flex-direction: column;
         list-style: none;
@@ -63,7 +71,7 @@
         border: 1px solid #dddddd;
         box-shadow: 0px 2px 2px 0px #dddddd;
         opacity: 0;
-        transform: translate(-4vw, 15vh);
+        transform: translate(-8vw, 18vh);
         transition: all 0.4s ease;
         position: fixed;
       }
@@ -90,14 +98,9 @@
         align-items: flex-start;
         justify-content: flex-start;
 
-        &-icon {
-          width: 20px;
-          padding-right: 0.1rem;
-
-          &-bis {
-            padding: 0 0 0.4rem 0.2rem;
-            width: 20px;
-          }
+        &:visited,
+        &:link {
+          color: #222222;
         }
       }
     }
@@ -107,7 +110,6 @@
         width: 85px;
         height: 45px;
         border: 1px solid #dddddd;
-       
 
         &:hover {
           background-color: #ffffff;
@@ -115,8 +117,18 @@
           box-shadow: 0px 2px 2px 0px #717171;
         }
 
-        &:focus + .topnav__dropdowntwo-list {
+        & + .topnav__dropdowntwo-list {
           opacity: 1;
+          pointer-events: all;
+          visibility: hidden;
+          transition: all 0s ease 1s;
+        }
+
+        &:hover + .topnav__dropdowntwo-list {
+          opacity: 1;
+          pointer-events: all;
+          transition-delay: 0s;
+          visibility: visible;
         }
 
         &-iconone {
@@ -124,11 +136,26 @@
           margin: 0.3em 0.1em;
         }
         &-icontwo {
-          width: 28px;
+          width: 1.8rem;
           filter: invert(48%) sepia(0%) saturate(0%) hue-rotate(216deg) brightness(91%)
             contrast(88%);
-          margin-top: 0.5em;
+          margin: 0 0 0 0.3em;
         }
+        &-icontwolog {
+          width: 1.8rem;
+          margin: 0 0 0 0.3em;
+          &:hover,
+          &:focus,
+          &:active {
+            color: #ffffff;
+            border-color: none;
+          }
+        }
+      }
+
+      &-list {
+        transform: translate(-3vw, 20vh);
+        height: 15em;
       }
     }
   }

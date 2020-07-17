@@ -1,0 +1,104 @@
+.breakpoint__small-down {
+  .place__header {
+    width: 100vw;
+    height: 8vh;
+    padding: 1em 2em;
+    font-size: 0.85em;
+  }
+
+  .place__container {
+    &-image {
+      width: 100vw;
+    }
+
+    &-info {
+      padding: 2em 1.5em;
+      line-height: 2em;
+
+      h1 {
+        font-size: 1.7em;
+      }
+
+      &-city {
+        font-size: 0.9em;
+        color: #717171;
+        text-decoration: underline;
+      }
+      &-more {
+        font-size: 0.9em;
+        line-height: 1em;
+      }
+    }
+
+    &-book {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 2em;
+      &-button {
+        margin: 1em 0 1em 0;
+        border-radius: 8px;
+        border: none;
+        width: 7em;
+        height: 3em;
+        background: linear-gradient(to right, #e61e4d 0%, #e31c5f 50%, #d70466 100%);
+        color: #ffffff;
+        font-family: 'Airbnb-Cereal';
+        font-size: 1em;
+        font-weight: bold;
+        letter-spacing: 0.4px;
+      }
+    }
+  }
+}
+
+.breakpoint__medium-up {
+  .place__container {
+    padding: 0 4vw 4vh;
+
+    &-images {
+      width: 95vw;
+    }
+
+    &-image {
+      width: 95vw;
+    }
+
+    &-info {
+      padding: 2em 1.5em;
+      line-height: 2em;
+
+      h1 {
+        font-size: 1.7em;
+      }
+
+      &-city {
+        font-size: 0.9em;
+        color: #717171;
+        text-decoration: underline;
+      }
+      &-more {
+        font-size: 0.9em;
+        line-height: 1em;
+      }
+    }
+
+    &-book {
+      display: flex;
+      justify-content: flex-start;
+      padding: 0 0 2em 5em;
+      &-button {
+        margin: 1em 0 1em 0;
+        border-radius: 8px;
+        border: none;
+        width: 7em;
+        height: 3em;
+        background: linear-gradient(to right, #e61e4d 0%, #e31c5f 50%, #d70466 100%);
+        color: #ffffff;
+        font-family: 'Airbnb-Cereal';
+        font-size: 1em;
+        font-weight: bold;
+        letter-spacing: 0.4px;
+      }
+    }
+  }
+}

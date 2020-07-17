@@ -1,26 +1,4 @@
-.breakpoint__small-down {
-
-  // width: 100vw;
-  // background-color: #ffffff;
-  // display: flex;
-  // // justify-content: space-evenly;
-  // position: fixed;
-  // bottom: 0;
-  // border: 1px solid red;
-  // // z-index: 99;
-  // &__container-logo {
-  //   display: none;
-  // }
-
-  // &__logo {
-  //   background-color: #fa6f84;
-  //   max-width: 5rem;
-  //   height: auto;
-  // }
-}
-
 .nav {
-  border: 1px solid pink;
   width: 100vw;
   background-color: #ffffff;
   border-top: solid 1px #d6d6d6;
@@ -32,7 +10,6 @@
   position: fixed;
   bottom: 0;
   &__link {
-    border: 1px solid blue;
     display: flex;
     flex-direction: column;
     align-items: center;

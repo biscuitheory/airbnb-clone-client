@@ -8,7 +8,7 @@ import TopNavbar from './nav/TopNavbar';
 function Header() {
   return (
     <>
-      <Breakpoint small down />
+      {/* <Breakpoint small down /> */}
       <Breakpoint medium only>
         <header className="header">
           <div className="header__container-logo">
