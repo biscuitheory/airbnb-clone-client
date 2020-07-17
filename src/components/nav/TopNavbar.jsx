@@ -12,7 +12,8 @@ import userIcon from '../../assets/images/icons/user.svg';
 Modal.setAppElement('#root');
 
 function TopNavbar() {
-  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [signupModalIsOpen, setSignupModalIsOpen] = useState(false);
+  const [loginModalIsOpen, setLoginModalIsOpen] = useState(false);
   return (
     <>
       <nav className="topnav">
@@ -55,20 +56,34 @@ function TopNavbar() {
           </button>
           <ul className="topnav__dropdowntwo-list">
             <li className="topnav__dropdowntwo-item">
-              <a href="/login">Connexion</a>
-            </li>
-            <li className="topnav__dropdowntwo-item">
-              <Link className="topnav__link" to="" onClick={() => setModalIsOpen(true)}>
-                <span>
-                  <strong>Inscription</strong>
-                </span>
-              </Link>
-              <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}>
+              <a className="topnav__link" onClick={() => setLoginModalIsOpen(true)}>
+                Connexion
+              </a>
+              <Modal isOpen={loginModalIsOpen} onRequestClose={() => setLoginModalIsOpen(false)}>
                 <button
                   type="button"
                   className="crossbtn"
                   title="close modal"
-                  onClick={() => setModalIsOpen(false)}
+                  onClick={() => setLoginModalIsOpen(false)}
+                >
+                  ✕
+                </button>
+                <ModalLogin />
+              </Modal>
+            </li>
+
+            <li className="topnav__dropdowntwo-item">
+              <Link className="topnav__link" to="" onClick={() => setSignupModalIsOpen(true)}>
+                <span>
+                  <strong>Inscription</strong>
+                </span>
+              </Link>
+              <Modal isOpen={signupModalIsOpen} onRequestClose={() => setSignupModalIsOpen(false)}>
+                <button
+                  type="button"
+                  className="crossbtn"
+                  title="close modal"
+                  onClick={() => setSignupModalIsOpen(false)}
                 >
                   ✕
                 </button>

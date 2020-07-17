@@ -12,7 +12,6 @@ const LoginForm = () => {
   const history = useHistory();
 
   async function submit() {
-    console.log('Submitted');
     try {
       const res = await axios.post('http://localhost:8080/api/signin', {
         email: data.email,
