@@ -5,7 +5,7 @@ import photoPlace from '../assets/images/photoPlace.jpg';
 
 const PlaceItem = (props) => {
   const { id, name, city, max_guests, rooms, bathrooms, price_by_night: priceByNight } = props.place;
-  console.log(props.place)
+  // console.log(props.place)
 
   // PlaceItem.propTypes = {
   //   id: PropTypes.number,

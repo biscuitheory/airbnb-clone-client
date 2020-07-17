@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Breakpoint } from 'react-socks';
 import { AuthContext } from '../../context/auth';
 
-import { ReactComponent as GoBackArrow } from '../../assets/images/icons/arrow.svg';
+import photoPlace from '../../assets/images/photoPlace.jpg';
 
 const Place = () => {
   const { state: authState } = useContext(AuthContext);
@@ -13,12 +13,13 @@ const Place = () => {
 
   const [place, setPlace] = useState('');
 
-  const { name, city } = place;
+  const { name, city, max_guests, rooms, bathrooms, price_by_night: priceByNight } = place;
 
   useEffect(() => {
     const fetchPlace = async () => {
       const res = await axios(`http://localhost:8080/api/places/${id}`);
       setPlace(res.data);
+      console.log(res.data);
     };
     fetchPlace();
   }, [id]);
@@ -29,7 +30,7 @@ const Place = () => {
         <Link to="/">&#8249; Logements • Airbnb</Link>
         <h1>{name}</h1>
         <p>{city}</p>
-        <p>C&apos;est une perle rare.Les réservations sont fréquentes chez</p>
+        <p>C&apos;est une perle rare.Les réservations sont fréquentes !</p>
         <Link to={`/rooms/${id}/reserver`}>
           <button type="button">Réserver</button>
         </Link>
@@ -45,29 +46,56 @@ const Place = () => {
             &#8249; Logements • Airbnb
           </Link>
         </div>
-        <div>
-          <img src="" alt=""/>
+        <div className="place__container">
+          <div className="place__container-images">
+            <img className="place__container-image" src={photoPlace} alt="appartement" />
+          </div>
+          <div className="place__container-info">
+            <h1>{name}</h1>
+            <p className="place__container-info-city">{city}</p>
+            <p className="place__container-info-moreinfos">
+              {max_guests} pers. max ∙ {rooms} chambres ∙ {bathrooms} salles de bain
+            </p>
+            <p className="container-info-city-night"> {priceByNight}€/nuit </p>
+            <p className="container-info-city-month"> {priceByNight * 30}€ pour un mois </p>
+            <p className="place__container-info-more">
+              C&apos;est une perle rare. Les réservations sont fréquentes !
+            </p>
+          </div>
         </div>
-        <h1>{name}</h1>
-        <p>{city}</p>
-        <p>C&apos;est une perle rare. Les réservations sont fréquentes chez</p>
         <div className="place__container-book">
           <Link to="/login">
-            <button type="button">Réserver</button>
+            <button type="button" className="place__container-book-button">
+              Réserver
+            </button>
           </Link>
         </div>
       </Breakpoint>
-      <Breakpoint large up>
+      <Breakpoint medium up>
         <div className="place__container">
-          <h1>{name}</h1>
-          <div className="place__container-intro">
-            <p>{city}</p>-<p>C&apos;est une perle rare.Les réservations sont fréquentes chez</p>
+          <div className="place__container-images">
+            <img className="place__container-image" src={photoPlace} alt="appartement" />
           </div>
-          <div className="place__container-book">
-            <Link to="/login">
-              <button type="button">Réserver</button>
-            </Link>
+          <div className="place__container-info">
+            <h1>{name}</h1>
+            <p className="place__container-info-city">{city}</p>
+            <p className="place__container-info-moreinfos">
+              {' '}
+              {max_guests} pers. max ∙ {rooms} chambres ∙ {bathrooms} salles de bain
+            </p>
+            <p className="container-info-city-night"> {priceByNight}€/nuit </p>
+            <p className="container-info-city-month"> {priceByNight * 30}€ pour un mois </p>
+            <p className="place__container-info-more">
+              C&apos;est une perle rare. Les réservations sont fréquentes !
+            </p>
           </div>
+        </div>
+        <div className="place__container-book">
+          <Link to="/login">
+            <button type="button" className="place__container-book-button">
+              Réserver
+            </button>
+          </Link>
         </div>
       </Breakpoint>
     </>
