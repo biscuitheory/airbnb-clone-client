@@ -1,7 +1,13 @@
 import React from 'react';
 
-function Reserver() {
-  return <h1>Réserver</h1>;
-}
+import ReserverForm from '../ReserverForm';
+
+const Reserver = () => {
+  return (
+    <div>
+      <ReserverForm />
+    </div>
+  );
+};
 
 export default Reserver;
