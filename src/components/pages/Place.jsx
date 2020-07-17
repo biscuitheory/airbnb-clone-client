@@ -28,7 +28,7 @@ const Place = () => {
 
   const [place, setPlace] = useState('');
 
-  const { name, city, max_guests, rooms, bathrooms, price_by_night: priceByNight, image } = place;
+  const { name, city, max_guests, rooms, bathrooms, image, price_by_night: priceByNight } = place;
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
