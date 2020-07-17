@@ -12,7 +12,6 @@ const Home = () => {
       const res = await axios('http://localhost:8080/api/places/');
 
       setPlaces(res.data);
-      console.log(res.data);
     };
     fetchPlaces();
   }, []);

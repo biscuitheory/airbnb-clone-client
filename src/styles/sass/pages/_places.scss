@@ -12,7 +12,7 @@
   .places__intro {
     padding: 5vh 10vw 0;
   }
-  
+
   .places {
     display: grid;
     grid-template-columns: repeat(1, auto [col-start]);
@@ -42,28 +42,32 @@
   }
 }
 
-.place {
-  height: 100%;
-  &__image {
-    max-width: 100%;
-    border-radius: 5%;
-  }
+.breakpoint__small-down,
+.breakpoint__medium-only,
+.breakpoint__large-up {
+  .place {
+    height: 100%;
+    &__image {
+      max-width: 100%;
+      border-radius: 5%;
+    }
 
-  &__name {
-    color: black;
-  }
+    &__name {
+      color: black;
+    }
 
-  &__moreinfos {
-    font-size: 0.95em;
-  }
+    &__moreinfos {
+      font-size: 0.95em;
+    }
 
-  &__price-night {
-    color: black;
-    font-weight: bold;
-  }
+    &__price-night {
+      color: black;
+      font-weight: bold;
+    }
 
-  &__price-month {
-    color: #717171;
-    font-size: 0.9em;
+    &__price-month {
+      color: #717171;
+      font-size: 0.9em;
+    }
   }
 }

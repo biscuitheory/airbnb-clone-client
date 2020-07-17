@@ -61,7 +61,7 @@
         position: relative;
         background-color: #ffffff;
         width: 150px;
-        height: 20vh;
+        height: 13em;
         display: flex;
         flex-direction: column;
         list-style: none;
@@ -71,7 +71,7 @@
         border: 1px solid #dddddd;
         box-shadow: 0px 2px 2px 0px #dddddd;
         opacity: 0;
-        transform: translate(-7vw, 15vh);
+        transform: translate(-10vw, 18vh);
         transition: all 0.4s ease;
         position: fixed;
       }
@@ -100,16 +100,6 @@
 
         &:visited {
           color: #000000;
-        }
-
-        &-icon {
-          width: 20px;
-          padding-right: 0.1rem;
-
-          &-bis {
-            padding: 0 0 0.4rem 0.2rem;
-            width: 20px;
-          }
         }
       }
     }
@@ -153,7 +143,8 @@
       }
 
       &-list {
-        transform: translate(-3vw, 15vh);
+        transform: translate(-3vw, 20vh);
+        height: 15em;
       }
     }
   }
