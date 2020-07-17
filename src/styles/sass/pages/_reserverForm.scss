@@ -1,30 +1,126 @@
+$input-border-none: none;
+$input-border-radius: 0;
+$input-height: 2rem;
+$input-background-color: white;
+$input-padding-left: 0.3rem;
+$input-color: rgb(68, 68, 68);
+$input-font-size: 0.8rem;
+$margin: 1.5rem 0;
+$border: 1px solid silver;
+$padding: 0.5rem;
+$font-size-h4: 12px;
+
 .reserver {
   padding: 1.5rem;
   &__croix {
-    margin: 2rem 0;
+    margin: 0 0 2rem;
     width: 2rem;
     height: 2rem;
   }
   &__input {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    border: 1px solid silver;
+    border: $border;
     border-radius: 0.5rem;
+    margin: $margin;
     &__item {
       &__check-in {
-        border-right: 1px solid silver;
+        border-right: $border;
         grid-column: 1 / 2;
-        grid-row: 1;
+        grid-row: 1/2;
+        padding: $padding;
+        input {
+          border: $input-border-none;
+          border-radius: $input-border-radius;
+          height: $input-height;
+          background-color: $input-background-color;
+          padding-left: $input-padding-left;
+          color: $input-color;
+          font-size: $input-font-size;
+        }
+        h4 {
+          font-size: $font-size-h4;
+        }
       }
       &__check-out {
-        grid-column: 2 / 3;
-        grid-row: 1;
+        grid-column: 2 / 2;
+        grid-row: 1/2;
+        padding: $padding;
+        input {
+          border: $input-border-none;
+          border-radius: $input-border-radius;
+          height: $input-height;
+          background-color: $input-background-color;
+          padding-left: $input-padding-left;
+          color: $input-color;
+          font-size: $input-font-size;
+        }
+        h4 {
+          font-size: $font-size-h4;
+        }
       }
       &__numVoyageurs {
-        border-top: 1px solid silver;
-        grid-column-start: 1;
-        grid-column-end: 3;
+        border-top: $border;
+        grid-column: 1/3;
+        grid-row: 2/2;
+        padding: $padding;
+        h4 {
+          font-size: $font-size-h4;
+        }
+        p {
+          padding-left: $input-padding-left;
+          font-size: $input-font-size;
+          color: $input-color;
+        }
       }
     }
+  }
+  &__annuler {
+    margin: $margin;
+    &__non-rembourser {
+      margin: $margin;
+      border: $border;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      color: $input-color;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  &__prix {
+    margin: $margin;
+    display: flex;
+    flex-direction: column;
+    &__item {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      color: $input-color;
+      p {
+        line-height: 1.8rem;
+      }
+      &__title {
+        display: flex;
+        flex-direction: row;
+        p {
+          padding-right: 0.6rem;
+        }
+      }
+    }
+  }
+  .reserver__button {
+    width: 100%;
+    margin-top: 16px;
+    margin-bottom: 24px;
+    border: 1px solid #ff5a5f;
+    border-radius: 8px;
+    background: linear-gradient(to right, #e61e4d 0%, #e31c5f 50%, #d70466 100%);
+    color: #ffffff;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-left: 24px;
+    padding-right: 24px;
+    font-size: 16px;
+    cursor: pointer;
   }
 }

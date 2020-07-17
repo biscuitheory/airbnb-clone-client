@@ -69,22 +69,15 @@ const ReserverForm = (callback) => {
           <form onSubmit={handleSubmit} noValidate>
             <h1>Votre voyage</h1>
             <div className="reserver__input">
-              <div className="reserver__input__item_check-in">
-                <label htmlFor="check_in">ARRIVÉE</label>
-                <input
-                  type="date"
-                  id="start"
-                  name="check_in"
-                  value={data.check_in}
-                  onChange={handleChange}
-                />
+              <div className="reserver__input__item__check-in">
+                <h4>ARRIVÉE</h4>
+                <input type="date" name="check_in" value={data.check_in} onChange={handleChange} />
                 {errors.check_in && <p className="error">{errors.check_in}</p>}
               </div>
               <div className="reserver__input__item__check-out">
-                <label htmlFor="check_out">DÉPART</label>
+                <h4>DÉPART</h4>
                 <input
                   type="date"
-                  id="end"
                   name="check_out"
                   value={data.check_out}
                   onChange={handleChange}
@@ -97,48 +90,60 @@ const ReserverForm = (callback) => {
               </div>
             </div>
             <hr />
-            <div>
+            <div className="reserver__annuler">
               <p>
                 <strong>Conditions d&apos;annulation</strong>
               </p>
-              <div>
-                <p>Non remboursable {prixTotal}€</p>
+              <div className="reserver__annuler__non-rembourser">
+                <p>
+                  <span>Non remboursable </span>
+                  {prixTotal}
+                  <span>€</span>
+                </p>
                 <FlashBas className="bookings__booking__info__info-link_right" />
               </div>
             </div>
             <hr />
-            <div>
-              <div>
-                <div>
-                  <div>
-                    <p>{priceByNight}</p>
-                    <span> x {nuit} nuit</span>
-                  </div>
+            <div className="reserver__prix">
+              <div className="reserver__prix__item">
+                <div className="reserver__prix__item__title">
+                  <p>
+                    {priceByNight}
+                    <span> x </span>
+                    {nuit}
+                    <span> nuit</span>
+                  </p>
                   <Question className="bookings__booking__info__info-link_right" />
                 </div>
-                <div>
-                  <p>{priceByNight}</p>
+                <p>
+                  {priceByNight}
                   <span>€</span>
-                </div>
+                </p>
               </div>
-              <div>
-                <div>
+              <div className="reserver__prix__item">
+                <div className="reserver__prix__item__title">
                   <p>Frais de service</p>
                   <Question className="bookings__booking__info__info-link_right" />
                 </div>
-                <p>{fraiseService}</p>
-                <span>€</span>
+                <p>
+                  {fraiseService}
+                  <span>€</span>
+                </p>
               </div>
-              <div>
-                <div>
+              <div className="reserver__prix__item">
+                <div className="reserver__prix__item__title">
                   <p>Taxes de séjour et frais</p>
                   <Question className="bookings__booking__info__info-link_right" />
                 </div>
-                <p>{taxe}</p>
-                <span>€</span>
+                <p>
+                  {taxe}
+                  <span>€</span>
+                </p>
               </div>
-              <hr />
-              <div>
+            </div>
+            <hr />
+            <div className="reserver__prix">
+              <div className="reserver__prix__item">
                 <p>
                   <strong>Total</strong>
                 </p>
@@ -149,7 +154,9 @@ const ReserverForm = (callback) => {
               </div>
             </div>
             <div>
-              <button type="submit">Réserver</button>
+              <button className="reserver__button" type="submit">
+                Réserver
+              </button>
             </div>
           </form>
         </div>
