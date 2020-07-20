@@ -19,7 +19,7 @@ const Home = () => {
     <>
       <Breakpoint small down>
         <div className="places__intro">
-          <h1>Logements : Paris </h1>
+          <h1>Logements : France </h1>
           <p>Classement par ordre de pertinence</p>
         </div>
         <div className="places">
@@ -30,7 +30,7 @@ const Home = () => {
       </Breakpoint>
       <Breakpoint medium only>
         <div className="places__intro">
-          <h1>Logements : Paris </h1>
+          <h1>Logements : France </h1>
           <p>Classement par ordre de pertinence</p>
         </div>
         <div className="places">
@@ -41,7 +41,7 @@ const Home = () => {
       </Breakpoint>
       <Breakpoint large up>
         <div className="places__intro">
-          <h1>Logements : Paris </h1>
+          <h1>Logements : France </h1>
           <p>Classement par ordre de pertinence</p>
         </div>
         <div className="places">

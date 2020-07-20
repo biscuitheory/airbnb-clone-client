@@ -19,6 +19,7 @@
     row-gap: 2em;
     padding: 5vh 8vw;
     // position: relative;
+
   }
 }
 
@@ -30,6 +31,14 @@
     row-gap: 2em;
     padding: 1vh 3vw;
   }
+
+  .place {
+    &__image {
+     min-height: 100px;
+      // min-height: 38vh;
+      // max-height: 50vh;
+    }
+  }
 }
 
 .breakpoint__large-up {
@@ -40,15 +49,24 @@
     row-gap: 2em;
     padding: 1vh 4vw;
   }
+
+  // .place {
+  //   &__image {
+  //     min-width: 8vw;
+  //     max-width: 40vw;
+  //     min-height: 25vh;
+  //     max-height: 25vh;
+  //   }
+  // }
 }
 
 .breakpoint__small-down,
 .breakpoint__medium-only,
 .breakpoint__large-up {
   .place {
-    height: 100%;
     &__image {
       max-width: 100%;
+      height: auto;
       border-radius: 5%;
     }
 
