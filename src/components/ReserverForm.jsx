@@ -10,6 +10,8 @@ import { ReactComponent as FlashBas } from '../assets/images/icons/flash-bas.svg
 import { ReactComponent as Question } from '../assets/images/icons/question.svg';
 import { ReactComponent as Croix } from '../assets/images/icons/croix.svg';
 
+const API = process.env.REACT_APP_API;
+
 const ReserverForm = (callback) => {
   const { state: authState } = useContext(AuthContext);
   const { id } = useParams();
@@ -24,7 +26,7 @@ const ReserverForm = (callback) => {
 
   useEffect(() => {
     const fetchPlace = async () => {
-      const res = await axios(`https://airbnb-clone-api.herokuapp.com/api/places/${id}`);
+      const res = await axios(`${API}/places/${id}`);
       setPlace(res.data);
     };
     fetchPlace();
@@ -40,7 +42,7 @@ const ReserverForm = (callback) => {
   async function submit() {
     try {
       const res = await axios.post(
-        'https://airbnb-clone-api.herokuapp.com/api/bookings',
+        `${API}/bookings`,
         {
           place_id: id,
           check_in: Moment(data.check_in).utc().format('YYYY-MM-DDTHH:mm:ss.SSS') + 'Z',

@@ -7,6 +7,8 @@ import { AuthContext } from '../../context/auth';
 
 import Reserver from './Reserver';
 
+const API = process.env.REACT_APP_API;
+
 const customStyles = {
   content: {
     width: '550px',
@@ -34,7 +36,7 @@ const Place = () => {
 
   useEffect(() => {
     const fetchPlace = async () => {
-      const res = await axios(`https://airbnb-clone-api.herokuapp.com/api/places/${id}`);
+      const res = await axios(`${API}/places/${id}`);
       setPlace(res.data);
       console.log(res.data);
     };

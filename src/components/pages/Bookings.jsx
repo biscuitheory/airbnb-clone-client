@@ -6,13 +6,15 @@ import { AuthContext } from '../../context/auth';
 import photoPlace from '../../assets/images/photoPlace.jpg';
 import { ReactComponent as FlashDroit } from '../../assets/images/icons/flash-droit.svg';
 
+const API = process.env.REACT_APP_API;
+
 const Bookings = () => {
   const { state: authState } = useContext(AuthContext);
   const [bookings, setBookings] = useState([]);
 
   useEffect(() => {
     const fetchBookings = async () => {
-      const getBookings = await axios('https://airbnb-clone-api.herokuapp.com/api/bookings', {
+      const getBookings = await axios(`${API}/bookings`, {
         headers: { Authorization: `Bearer ${authState.token}` },
       });
 

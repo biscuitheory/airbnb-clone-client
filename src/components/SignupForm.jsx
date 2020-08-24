@@ -5,12 +5,14 @@ import axios from 'axios';
 import useForm from './useForm';
 import validate from './validators/ValidateSignup';
 
+const API = process.env.REACT_APP_API;
+
 const SignupForm = () => {
   const { handleInputChange, handleFormSubmit, data, errors } = useForm(submit, validate);
   const history = useHistory();
   async function submit() {
     try {
-      const res = await axios.post('https://airbnb-clone-api.herokuapp.com/api/signup', {
+      const res = await axios.post(`${API}/signup`, {
         role: data.role,
         first_name: data.first_name,
         last_name: data.last_name,
@@ -32,7 +34,7 @@ const SignupForm = () => {
         onSubmit={handleFormSubmit}
         noValidate
         method="POST"
-        action="https://airbnb-clone-api.herokuapp.com/api/signup"
+        action={`${API}/signup`}
         className="signup__form"
       >
         <div className="signup__box-radios">

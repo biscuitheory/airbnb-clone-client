@@ -6,6 +6,8 @@ import { ReactComponent as Voyageurs } from '../../assets/images/icons/voyageurs
 import { ReactComponent as Calendrier } from '../../assets/images/icons/calendrier.svg';
 import { ReactComponent as Arrow } from '../../assets/images/icons/arrow.svg';
 
+const API = process.env.REACT_APP_API;
+
 const Booking = () => {
   const [booking, setBooking] = useState([]);
 
@@ -13,7 +15,7 @@ const Booking = () => {
 
   useEffect(() => {
     const fetchBookings = async () => {
-      const res = await axios('https://airbnb-clone-api.herokuapp.com/api/bookings');
+      const res = await axios(`${API}/bookings`);
 
       setBooking(res.data);
     };

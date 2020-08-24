@@ -4,12 +4,14 @@ import { Breakpoint } from 'react-socks';
 
 import PlaceItem from '../PlaceItem';
 
+const API = process.env.REACT_APP_API;
+
 const Home = () => {
   const [places, setPlaces] = useState([]);
 
   useEffect(() => {
     const fetchPlaces = async () => {
-      const res = await axios('https://airbnb-clone-api.herokuapp.com/api/places/');
+      const res = await axios(`${API}/places/`);
 
       setPlaces(res.data);
     };
