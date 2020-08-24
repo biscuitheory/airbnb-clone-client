@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import { AuthContext } from '../context/auth';
 import useForm from './useForm';
-import validate from './ValidateLogin';
+import validate from './validators/ValidateLogin';
 
 const LoginForm = () => {
   const { dispatch } = useContext(AuthContext);
@@ -13,7 +13,7 @@ const LoginForm = () => {
 
   async function submit() {
     try {
-      const res = await axios.post('http://localhost:8080/api/signin', {
+      const res = await axios.post('https://airbnb-clone-api.herokuapp.com/api/signin', {
         email: data.email,
         password: data.password,
       });

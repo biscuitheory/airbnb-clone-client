@@ -12,7 +12,7 @@ const Bookings = () => {
 
   useEffect(() => {
     const fetchBookings = async () => {
-      const getBookings = await axios('http://localhost:8080/api/bookings', {
+      const getBookings = await axios('https://airbnb-clone-api.herokuapp.com/api/bookings', {
         headers: { Authorization: `Bearer ${authState.token}` },
       });
 

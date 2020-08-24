@@ -3,14 +3,14 @@ import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 import useForm from './useForm';
-import validate from './ValidateSignup';
+import validate from './validators/ValidateSignup';
 
 const SignupForm = () => {
   const { handleInputChange, handleFormSubmit, data, errors } = useForm(submit, validate);
   const history = useHistory();
   async function submit() {
     try {
-      const res = await axios.post('http://localhost:8080/api/signup', {
+      const res = await axios.post('https://airbnb-clone-api.herokuapp.com/api/signup', {
         role: data.role,
         first_name: data.first_name,
         last_name: data.last_name,
@@ -32,7 +32,7 @@ const SignupForm = () => {
         onSubmit={handleFormSubmit}
         noValidate
         method="POST"
-        action="http://localhost:8080/api/signup"
+        action="https://airbnb-clone-api.herokuapp.com/api/signup"
         className="signup__form"
       >
         <div className="signup__box-radios">

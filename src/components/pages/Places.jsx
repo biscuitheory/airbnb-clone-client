@@ -9,7 +9,7 @@ const Home = () => {
 
   useEffect(() => {
     const fetchPlaces = async () => {
-      const res = await axios('http://localhost:8080/api/places/');
+      const res = await axios('https://airbnb-clone-api.herokuapp.com/api/places/');
 
       setPlaces(res.data);
     };

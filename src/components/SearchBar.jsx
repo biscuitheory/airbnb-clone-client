@@ -12,7 +12,7 @@ function SearchBar() {
 
   async function submit() {
     try {
-      const res = await axios.post('http://localhost:8080/api/', {
+      const res = await axios.post('https://airbnb-clone-api.herokuapp.com/api/', {
         city: data.city,
       });
     } catch (error) {}
