@@ -5,7 +5,6 @@ import { Breakpoint } from 'react-socks';
 import PlaceItem from '../PlaceItem';
 
 const API = process.env.REACT_APP_API;
-console.log(API);
 
 const Home = () => {
   const [places, setPlaces] = useState([]);
