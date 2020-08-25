@@ -11,7 +11,7 @@ const API = process.env.REACT_APP_API;
 const Bookings = () => {
   const { state: authState } = useContext(AuthContext);
   const [bookings, setBookings] = useState([]);
-
+  console.log(authState.token);
   useEffect(() => {
     const fetchBookings = async () => {
       const getBookings = await axios(`${API}/bookings`, {

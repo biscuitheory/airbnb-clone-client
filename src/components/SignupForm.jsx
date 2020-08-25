@@ -47,7 +47,7 @@ const SignupForm = () => {
                 id="Host"
                 className="signup__input--host"
                 onChange={handleInputChange}
-                value="Host"
+                value="host"
               />
             </label>
           </div>
@@ -60,7 +60,7 @@ const SignupForm = () => {
                 id="Tourist"
                 className="signup__input--tourist"
                 onChange={handleInputChange}
-                value="Tourist"
+                value="tourist"
               />
             </label>
           </div>
