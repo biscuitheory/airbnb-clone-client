@@ -70,7 +70,7 @@ const Place = () => {
             </div>
           </div>
           <div className="place__container-book">
-            <Link to="/rooms/:id/reserver">
+            <Link to={`/rooms/${id}/reserver`}>
               <button type="button" className="place__container-book-button">
                 Réserver
               </button>
