@@ -7,6 +7,8 @@ import { AuthContext } from '../../context/auth';
 
 import Reserver from './Reserver';
 
+const API = process.env.REACT_APP_API;
+
 const customStyles = {
   content: {
     width: '550px',
@@ -34,7 +36,7 @@ const Place = () => {
 
   useEffect(() => {
     const fetchPlace = async () => {
-      const res = await axios(`http://localhost:8080/api/places/${id}`);
+      const res = await axios(`${API}/places/${id}`);
       setPlace(res.data);
       console.log(res.data);
     };
@@ -68,7 +70,7 @@ const Place = () => {
             </div>
           </div>
           <div className="place__container-book">
-            <Link to="/rooms/:id/reserver">
+            <Link to={`/rooms/${id}/reserver`}>
               <button type="button" className="place__container-book-button">
                 Réserver
               </button>

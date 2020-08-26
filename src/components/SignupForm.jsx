@@ -3,14 +3,16 @@ import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 import useForm from './useForm';
-import validate from './ValidateSignup';
+import validate from './validators/ValidateSignup';
+
+const API = process.env.REACT_APP_API;
 
 const SignupForm = () => {
   const { handleInputChange, handleFormSubmit, data, errors } = useForm(submit, validate);
   const history = useHistory();
   async function submit() {
     try {
-      const res = await axios.post('http://localhost:8080/api/signup', {
+      const res = await axios.post(`${API}/signup`, {
         role: data.role,
         first_name: data.first_name,
         last_name: data.last_name,
@@ -32,7 +34,7 @@ const SignupForm = () => {
         onSubmit={handleFormSubmit}
         noValidate
         method="POST"
-        action="http://localhost:8080/api/signup"
+        action={`${API}/signup`}
         className="signup__form"
       >
         <div className="signup__box-radios">
@@ -45,7 +47,7 @@ const SignupForm = () => {
                 id="Host"
                 className="signup__input--host"
                 onChange={handleInputChange}
-                value="Host"
+                value="host"
               />
             </label>
           </div>
@@ -58,7 +60,7 @@ const SignupForm = () => {
                 id="Tourist"
                 className="signup__input--tourist"
                 onChange={handleInputChange}
-                value="Tourist"
+                value="tourist"
               />
             </label>
           </div>

@@ -5,10 +5,12 @@ import Moment from 'moment';
 
 import { AuthContext } from '../context/auth';
 import useReserverForm from './useReserverForm';
-import validate from './ValidateReserver';
+import validate from './validators/ValidateReserver';
 import { ReactComponent as FlashBas } from '../assets/images/icons/flash-bas.svg';
 import { ReactComponent as Question } from '../assets/images/icons/question.svg';
 import { ReactComponent as Croix } from '../assets/images/icons/croix.svg';
+
+const API = process.env.REACT_APP_API;
 
 const ReserverForm = (callback) => {
   const { state: authState } = useContext(AuthContext);
@@ -24,7 +26,7 @@ const ReserverForm = (callback) => {
 
   useEffect(() => {
     const fetchPlace = async () => {
-      const res = await axios(`http://localhost:8080/api/places/${id}`);
+      const res = await axios(`${API}/places/${id}`);
       setPlace(res.data);
     };
     fetchPlace();
@@ -40,7 +42,7 @@ const ReserverForm = (callback) => {
   async function submit() {
     try {
       const res = await axios.post(
-        'http://localhost:8080/api/bookings',
+        `${API}/bookings`,
         {
           place_id: id,
           check_in: Moment(data.check_in).utc().format('YYYY-MM-DDTHH:mm:ss.SSS') + 'Z',

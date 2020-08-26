@@ -5,6 +5,8 @@ import axios from 'axios';
 import { SearchContext } from '../context/search';
 import useForm from './useForm';
 
+const API = process.env.REACT_APP_API;
+
 function SearchBar() {
   const { dispatch } = useContext(SearchContext);
   const { handleInputChange, handleFormSubmit, data, setData, errors } = useForm(submit, validate);
@@ -12,7 +14,7 @@ function SearchBar() {
 
   async function submit() {
     try {
-      const res = await axios.post('http://localhost:8080/api/', {
+      const res = await axios.post(`${API}/`, {
         city: data.city,
       });
     } catch (error) {}
